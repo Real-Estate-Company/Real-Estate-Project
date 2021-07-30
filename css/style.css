@@ -158,3 +158,44 @@ footer {
     background: seashell;
 }
 
+
+
+
+/* suhaib's code  */
+
+.max{
+    border: groove;
+    border-color: sienna;
+    margin-bottom: 50px;
+}
+.container{
+    
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+grid-template-rows: repeat(8, 5vw);
+grid-gap: 5%;
+/* border-style: solid;
+    border-color: darkgoldenrod; */
+    
+}
+
+
+
+
+
+/* 
+#imgsDiv {
+    display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px
+  }
+  
+  .wow{
+    flex: 50%;
+    padding: 0 4px;
+  }
+  
+  .wow img{
+    margin-top: 8px;
+    vertical-align: middle;
+  } */
