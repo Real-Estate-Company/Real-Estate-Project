@@ -19,6 +19,6 @@ This website is dealing with selling real estate as a mediator between sellers a
 
 
 
+**References:**
 
-
-
+- [https://css-tricks.com/css-only-carousel/](https://css-tricks.com/css-only-carousel/) for the carousel
