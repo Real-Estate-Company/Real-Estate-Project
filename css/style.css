@@ -128,6 +128,28 @@ section button:hover {
     background: salmon;
 }
 
+/* table in control.html */
+#Control-table table, th, td {
+    border: 1px solid black;
+  }
+
+  #Control-table table{
+    width:50%;
+  }
+
+  /* Aboutus.html */
+.Aboutus div{
+    border: 3px solid rgb(80, 79, 79);
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.Aboutus div img{
+    width: 300px;
+    height: 250px;
+    
+}
 /* Footer */
 
 footer {
