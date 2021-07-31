@@ -1,30 +1,18 @@
 "use strict"
 
-const chooseItem = [];
 
-//First Constructor 
-// const SelectedItem = function (id, name, filePath) {
-//     this.id = id;
-//     this.name = name;
-//     this.filePath = filePath;
-//     this.all.push(this);
-// }
-// SelectedItem.all = [];
-// //addItem Function 
-// SelectedItem.prototype.addItem = function (id, name, filePath) {
+// First Constructor 
+const SelectedItem = function (id, name, filePath) {
+    this.id = id;
+    this.name = name;
+    this.filePath = filePath;
+    SelectedItem.all.push(this);
+}
+SelectedItem.all = [];
 
-//     let newItem = new SelectedItem(id, name, filePath);
-
-// }
-
-
-
-// SelectedItem.prototype.
 const saveToLocalStorage = function () {
-    // TODO: Fill in this instance method to save the contents of the cart to localStorage
-    localStorage.setItem('selectedItem', JSON.stringify(chooseItem.all));
+    localStorage.setItem('selectedItem', JSON.stringify(SelectedItem.all));
 };
-
 
 //Second Constructor
 const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
@@ -55,12 +43,11 @@ function generateObjects() {
     new Product('Picadilly Green, DAMAC Hills ', 'img/p8/img1.jpg', 'between Al Qudra Road and Hessa Street', 'USD 550,000', '6 Bed ,7 Bath,2 Parking', '900 16 2133', 0, 0, 0);
     new Product('The Aldea, The Villa', 'img/p9/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 5,000,000 ', '5 Bed,6 Bath,2 Parking', '600 44 2133', 0, 0, 0);
     new Product('Villa Myra', 'img/p10/img1.jpg', 'Jumeirah Village Circle', 'USD 450,000', '1 Bed,1 Bath,1 Parking', '600 33 2663', 0, 0, 0);
-
-
 }
-//call function 
-generateObjects();
 
+//call function 
+
+generateObjects();
 
 //Slidshow
 var slideIndex = 1;
@@ -90,26 +77,45 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-let index;
+//add links to images
 function prepareLinks() {
     for (let i = 0; i < Product.all.length; i++) {
         let selectedImg = document.getElementById(i);
-        index = i;
         selectedImg.addEventListener('click', clickPicture);
-        // console.log(selectedImg.id);
-        console.log(index);
     }
 }
 
-function clickPicture() {
-    // selectedItem
-    // console.log(selectedItem.Itemes);
-    chooseItem = [];
-    let item = [index, Product.all[index].name, Product.all[index].filePath];
-    console.log(item);
+function clickPicture(event) {
+    let chooseIndex = event.target.id;
+    let name = Product.all[chooseIndex].name;
+    let filePath = Product.all[chooseIndex].filePath;
+    SelectedItem.all=[];
+    let item = new SelectedItem(chooseIndex, name, filePath);
     saveToLocalStorage();
-    // console.log(selectedItem.Itemes);
+    //render features
+    renderFeatures(chooseIndex);
 }
 
 prepareLinks();
 
+function renderFeatures(id){
+    let chosenImg = document.getElementById('selectedItem');
+    chosenImg.src = Product.all[id].filePath;
+
+    let productName = document.getElementById('productName');
+    let price = document.getElementById('price');
+    let address = document.getElementById('address');
+    let phoneNo = document.getElementById('contactus');
+    let like = document.getElementById('like');
+    let buy = document.getElementById('bought');    
+
+    productName.textContent = Product.all[id].name;
+    price.textContent = Product.all[id].price;
+    address.textContent = Product.all[id].address;
+    phoneNo.textContent = Product.all[id].contactus;
+    like.textContent = Product.all[id].like;
+    buy.textContent = Product.all[id].bought;
+    // console.log(productName,price,like);
+}
+
+renderFeatures(0);//to render the features section om=n page load

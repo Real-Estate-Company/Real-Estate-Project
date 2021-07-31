@@ -7,10 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
     <title>Home</title>
 </head>
-
 <body>
     <header>
         <nav>
@@ -25,12 +23,8 @@
                 </li>
             </ul>
         </nav>
-
     </header>
-
     <main>
-
-
         <!-- Slide show element -->
         <ul>
             <li>
@@ -99,7 +93,6 @@
 
                 </div>
                 <br>
-
                 <div style="text-align:center" id="doNavigator">
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
@@ -113,83 +106,24 @@
                     <span class="dot" onclick="currentSlide(10)"></span>
 
                 </div>
-                <!-- <section class="carousel" aria-label="Gallery">
-                    <ol class="carousel__viewport">
-                        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-                            <img src="img/p1/img2.jpg" alt="" width="100%" height="100%">
-                            <div class="carousel__snapper">
-
-                                <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-
-                                <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-                            </div>
-                        </li>
-                        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-                            <div class="carousel__snapper"></div>
-                            <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-                            <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-                            <div class="carousel__snapper"></div>
-                            <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-                            <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-                            <div class="carousel__snapper"></div>
-                            <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
-                            <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-                        </li>
-                    </ol>
-                    <aside class="carousel__navigation">
-                        <ol class="carousel__navigation-list">
-                            <li class="carousel__navigation-item">
-                                <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
-                            </li>
-                            <li class="carousel__navigation-item">
-                                <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
-                            </li>
-                            <li class="carousel__navigation-item">
-                                <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
-                            </li>
-                            <li class="carousel__navigation-item">
-                                <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
-                            </li>
-                        </ol>
-                    </aside>
-                </section> -->
             </li>
 
         </ul>
 
-        <section>
+        <section id="featuesSection">
 
-            <img src="assets/PlaceHolder.jpg" id="selectedItem" />
+            <img src="" id="selectedItem" />
             <div>
                 <h2>Property Specifications</h2>
-
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque repellat amet id officia
-                    perspiciatis magnam alias debitis repellendus omnis? Odio obcaecati eligendi, illo distinctio quis
-                    fugiat. Placeat sequi dolor accusantium.
-                    <br>
-                    <br>
-                    Doloribus, eos dolore illo facilis inventore laudantium ducimus ad libero, tempore nihil pariatur
-                    dicta molestiae nisi id itaque minus similique doloremque quis voluptatum atque officia ea, quaerat
-                    rerum. Esse, necessitatibus.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit, asperiores dolorem ipsam ad
-                    blanditiis explicabo. Esse corrupti ratione in obcaecati iusto hic, illo perspiciatis ut quas
-                    sapiente culpa harum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit, asperiores dolorem ipsam ad
-                    blanditiis explicabo. Esse corrupti ratione in obcaecati iusto hic, illo perspiciatis ut quas
-                    sapiente culpa harum.
+                <p id="featuresP">
+                    <p id="productName"></p>
+                    <p id="price"></p>
+                    <p id="address"></p>
+                    <p id="contactus"></p>
+                    <p id="like"></p>
+                    <p id="bought"></p>
                 </p>
-
-                <button>Order</button>
-
+                <button id="buyButton">Order</button>
             </div>
         </section>
     </main>
