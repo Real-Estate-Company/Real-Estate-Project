@@ -97,14 +97,17 @@ ol, li {
   counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  
+ 
 }
 
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: teal;
+  /* background-color: teal; */
   counter-increment: item;
+  
 }
 
 .carousel__slide:nth-child(even) {
