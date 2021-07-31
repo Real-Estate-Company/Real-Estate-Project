@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&display=swap');/*Header Font*/
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Open+Sans:wght@600&display=swap');/*for the body font*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&display=swap');
+/*Header Font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Open+Sans:wght@600&display=swap');
+/*for the body font*/
 
 /*All body style*/
 
@@ -26,7 +29,6 @@ nav img {
     height: 100pt;
 }
 
-
 nav li {
     /* display: inline-block; */
     margin-top: 6%;
@@ -40,7 +42,7 @@ a {
 }
 
 h1 {
-    font-family: 'Abril Fatface', cursive;    
+    font-family: 'Abril Fatface', cursive;
     font-size: xx-large;
     margin-top: 5%;
     margin-right: 30px;
@@ -53,10 +55,9 @@ main {
     margin: 0px auto;
 }
 
-
 main ul {
     margin: 30px auto;
-    padding : 0px;
+    padding: 0px;
     /* display: flex;    
     justify-content: space-between; */
 }
@@ -66,7 +67,7 @@ main ul {
     margin: 30px, 30px, 30px, 30px;
 } */
 
-#HeaderImg{
+#HeaderImg {
     width: 960px;
     height: 450px;
 }
@@ -78,17 +79,18 @@ section {
 
 section img {
     width: 45%;
-    display: inline-block;  
+    display: inline-block;
     margin-bottom: 30px;
 }
 
-#selectedItem{
+#selectedItem {
     width: 480px;
     height: 400px;
 }
+
 /* Text and Button */
 
-section div {    
+section div {
     width: 50%;
     float: right;
     padding-left: 30px;
@@ -108,7 +110,6 @@ section p {
     overflow: scroll;
     /* font-style: italic; */
     margin-bottom: 10px;
-    
 }
 
 /* button */
@@ -128,34 +129,215 @@ section button:hover {
     background: salmon;
 }
 
-/* table in control.html */
-#Control-table table, th, td {
+/* selection bar by odi sadaqa in control html */
+
+#selection-bar {
+    margin: 20px;
+    width: 200px;
+    height: 40px;
+    position: relative;
+    /* float: left; */
+}
+
+#selection-bar select {
+    width: 200px;
+    height: 40px;
+    /* text-align: center; */
+    background-color: rgb(54, 138, 138);
+    color: cornsilk;
+    font-size: 20px;
+}
+
+/* finished selection bar */
+
+/* table css in control html by odai sadaqa */
+
+table {
     border: 1px solid black;
-  }
+    width: 90%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin: 30px;
+    height: 200px;
+    background-color: cyan;
+}
 
-  #Control-table table{
-    width:50%;
-  }
-
-  /* Aboutus.html */
-.Aboutus div{
-    border: 3px solid rgb(80, 79, 79);
+th, td {
+    border: 1px solid black;
     text-align: center;
-    padding-bottom: 10px;
-    padding-top: 5px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
 }
 
-.Aboutus div img{
-    width: 300px;
-    height: 250px;
-    
+/* finished table css*/
+
+/* chart css odai sadaqa */
+
+#myChart {
+    /* padding:5px; */
+    border: 1px solid black;
+    margin: 25px;
 }
+
+/* end chart css */
+
+/* Aboutus.html  by odai sadaqa*/
+
+#Aboutus #first {
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#Aboutus #second {
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#first h2 {
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#second h2 {
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#first p {
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: justify;
+    float: right;
+    padding: 10px;
+}
+
+#second p {
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: justify;
+    float: right;
+    padding: 10px;
+}
+
+#first a {
+    font-size: 17px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+}
+#second a {
+    font-size: 17px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+#div1 {
+    text-align: center;
+    width: 400px;
+    border: 3px solid rgb(80, 79, 79);
+    background-color: rgb(194, 185, 190);
+    height: 250px;
+    float: right;
+    margin: 20px;
+}
+
+#div2 {
+    text-align: center;
+    width: 400px;
+    border: 3px solid rgb(80, 79, 79);
+    background-color: rgb(194, 185, 190);
+    height: 250px;
+    float: left;
+    margin: 20px;
+}
+
+#div3 {
+    text-align: center;
+    width: 400px;
+    border: 3px solid rgb(80, 79, 79);
+    background-color: rgb(194, 185, 190);
+    ;
+    height: 250px;
+    float: right;
+    margin: 20px;
+    /* box-sizing: border-box; */
+}
+
+
+#div4 {
+    text-align: center;
+    width: 400px;
+    border: 3px solid rgb(80, 79, 79);
+    background-color: rgb(194, 185, 190);
+    ;
+    height: 250px;
+    float: left;
+    margin: 20px;
+}
+
+#div5 {
+    text-align: center;
+    width: 400px;
+    border: 3px solid rgb(80, 79, 79);
+    background-color: rgb(194, 185, 190);
+    ;
+    height: 250px;
+    float: right;
+    margin: 20px;
+}
+
+#div6 {
+    text-align: center;
+    width: 400px;
+    border: 3px solid rgb(80, 79, 79);
+    background-color: rgb(194, 185, 190);
+    ;
+    height: 250px;
+    float: left;
+    margin: 20px;
+}
+
+#Aboutus div img {
+    width: 150px;
+    height: 100px;
+    float: left;
+    border-style: inset;
+    border-width: 3px;
+    border-color: coral;
+    /* padding: 5px; */
+    margin: 20px;
+}
+
+/* finished About us. html  by odai sadaqa*/
+
+/* Footer */
+
+footer {
+    clear: both;
+    height: 150px;
+    background: seashell;
+}
+
+/* suhaib's code  */
 
 
 
 /* suhaib's code for products  */
 
-.max{
+
+.max {
     border: groove;
     border-color: sienna;
     margin-bottom: 50px;
@@ -163,6 +345,34 @@ section button:hover {
     width: 100%;
     height: 400px;
 }
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 5%;
+    /* border-style: solid;
+    border-color: darkgoldenrod; */
+}
+
+/* 
+#imgsDiv {
+    display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px
+  }
+  
+  .wow{
+    flex: 50%;
+    padding: 0 4px;
+  }
+  
+  .wow img{
+    margin-top: 8px;
+    vertical-align: middle;
+  } */
+
 .container{
     
 display: grid;
@@ -351,6 +561,7 @@ footer {
     height: 150px;
     background: seashell;
 }
+
 
 
 
