@@ -58,14 +58,8 @@ main {
 main ul {
     margin: 30px auto;
     padding: 0px;
-    /* display: flex;    
-    justify-content: space-between; */
 }
 
-/* main li {    
-    display: inline-block;
-    margin: 30px, 30px, 30px, 30px;
-} */
 
 #HeaderImg {
     width: 960px;
@@ -85,36 +79,37 @@ section img {
 
 #selectedItem {
     width: 480px;
-    height: 400px;
+    height: 350px;
 }
 
 /* Text and Button */
-
-section div {
+/* featuesSection */
+#featuesSection div {
     width: 50%;
-    float: right;
+    /* float: right; */
     padding-left: 30px;
     margin-bottom: 30px;
 }
 
-section h2 {
+#featuesSection h2 {
     font-size: 18px;
     margin-bottom: 10px;
     font-family: 'Open Sans', sans-serif;
 }
 
-section p {
+#featuresP ul li {
+    /* position: inherit; */
     font-family: 'Open Sans', sans-serif;
     height: 250px;
     color: dimgray;
-    overflow: scroll;
+    /* overflow: scroll; */
     /* font-style: italic; */
     margin-bottom: 10px;
 }
 
 /* button */
 
-section button {
+#featuesSection button {
     border: none;
     font-size: 18px;
     color: #fff;
@@ -125,7 +120,7 @@ section button {
     cursor: pointer;
 }
 
-section button:hover {
+#featuesSection button:hover {
     background: salmon;
 }
 
