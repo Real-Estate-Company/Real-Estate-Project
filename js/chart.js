@@ -1,8 +1,11 @@
+
+
+
 function showChart() {
 
   
     const data = {
-      labels: namesArr,
+      labels: "namesArr",
       datasets: [{
         label: 'Votes',
         data: [1,2,3,4],
@@ -72,3 +75,6 @@ function showChart() {
     );
     
   }
+
+  showChart() ;
+
