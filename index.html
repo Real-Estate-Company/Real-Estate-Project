@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <title>Home</title>
@@ -18,12 +17,6 @@
             <img src="assets/Logo.png">
             <h1>REAL ESTATE COMPANY</h1>
             <ul>
-                <!-- <li>
-                    <a href="#">Real-Estates</a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li> -->
                 <li>
                     <a href="aboutus.html">About Us</a>
                 </li>
@@ -41,7 +34,86 @@
         <!-- Slide show element -->
         <ul>
             <li>
-                <section class="carousel" aria-label="Gallery">
+                <div class="slideshow-container" id="mainSlider">
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 10</div>
+                        <img src="img/p1/img1.jpg" style="width:100%" id="0">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 10</div>
+                        <img src="img/p2/img1.jpg" style="width:100%" id="1">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 10</div>
+                        <img src="img/p3/img1.jpg" style="width:100%" id="2">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 10</div>
+                        <img src="img/p4/img1.jpg" style="width:100%" id="3">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 10</div>
+                        <img src="img/p5/img1.jpg" style="width:100%" id="4">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">6 / 10</div>
+                        <img src="img/p6/img1.jpg" style="width:100%" id="5">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">7 / 10</div>
+                        <img src="img/p7/img1.jpg" style="width:100%" id="6">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">8 / 10</div>
+                        <img src="img/p8/img1.jpg" style="width:100%" id="7">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">9 / 10</div>
+                        <img src="img/p9/img1.jpg" style="width:100%" id="8">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">10 / 10</div>
+                        <img src="img/p10/img1.jpg" style="width:100%" id="9">
+
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div style="text-align:center" id="doNavigator">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+
+                </div>
+                <!-- <section class="carousel" aria-label="Gallery">
                     <ol class="carousel__viewport">
                         <li id="carousel__slide1" tabindex="0" class="carousel__slide">
                             <img src="img/p1/img2.jpg" alt="" width="100%" height="100%">
@@ -52,7 +124,7 @@
                                 <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
                             </div>
                         </li>
-                        <!-- <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
                             <div class="carousel__snapper"></div>
                             <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
                             <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
@@ -66,7 +138,7 @@
                             <div class="carousel__snapper"></div>
                             <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
                             <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-                        </li> -->
+                        </li>
                     </ol>
                     <aside class="carousel__navigation">
                         <ol class="carousel__navigation-list">
@@ -84,7 +156,7 @@
                             </li>
                         </ol>
                     </aside>
-                </section>
+                </section> -->
             </li>
 
         </ul>
