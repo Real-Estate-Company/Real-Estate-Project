@@ -150,6 +150,200 @@ section button:hover {
     height: 250px;
     
 }
+
+
+
+/* suhaib's code for products  */
+
+.max{
+    border: groove;
+    border-color: sienna;
+    margin-bottom: 50px;
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.container{
+    
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+grid-template-rows: repeat(8, 5vw);
+grid-gap: 5%;
+width: 100%;
+/* border-style: solid;
+    border-color: darkgoldenrod; */
+    /* margin: 0;
+    padding: 0;
+    text-align: justify; */
+    
+}
+
+.placeholder{
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    
+
+} 
+
+
+main div ul{
+    
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0%;
+    top: 10%;
+}
+main div ul li{
+    padding: 10%;
+}
+
+.like{
+    position: absolute;
+    bottom: 0%;
+    left:35%;
+    margin: 0%;
+    padding: 0%;
+}
+.dislike{
+    position: absolute;
+    bottom: 0%;
+    left: 38%;
+    margin: 0%;
+    padding: 0%;
+}
+.like:hover{
+    transform: scale(1.9);
+    background-color: dodgerblue;
+
+}
+.dislike:hover{
+    transform: scale(1.9);
+    background-color: dodgerblue;
+
+}
+
+.placeholder:hover{
+    transform: scale(1.2);
+}
+
+/* register css by suhaib */
+#fff{
+    border: groove;
+    border-color: sienna;
+    margin-bottom: 50px;
+    margin-top: 5%;
+    position: relative;
+    /* float: left; */
+ width: 100%;
+ height: 300px;
+ 
+ }
+#data{
+    border: groove;
+    border-color: sienna;
+    margin-bottom: 50px;
+    margin-top: 5%;
+    position: relative;
+    
+    /* float: right; */
+    width: 100%;
+    height: 400px;
+   
+    
+}
+
+#imgZ:hover{
+    transform: scale(1.2);
+
+}
+#imgZ{
+    position: absolute;
+    left: 15%;
+    top: 10%;
+}
+
+
+.like2{
+    position: absolute;
+    bottom:10%;
+    left:35%;
+    margin: 0%;
+    padding: 0%;
+}
+.dislike2{
+    position: absolute;
+    bottom: 10%;
+    left: 38%;
+    margin: 0%;
+    padding: 0%;
+}
+.like2:hover{
+    transform: scale(1.9);
+    background-color: dodgerblue;
+
+}
+.dislike2:hover{
+    transform: scale(1.9);
+    background-color: dodgerblue;
+
+}
+
+.container2{
+    
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+grid-template-rows: repeat(8, 5vw);
+grid-gap: 5%;
+width: 100%;
+
+
+    
+}
+
+
+ #input{
+   
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 30%;
+    top: 30%;
+}
+#input li{
+    padding: 5%;
+}
+
+
+#form{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+fieldset{
+    padding: 10px;
+}
+
+#emailField{
+    margin-left: 49px;
+}
+#phoneField{
+    margin-left: 17px;
+}
+#formButton:hover{
+    background-color: navy;
+
+}
+#formButton{
+    background-color: darkgrey;
+    color: whitesmoke;
+}
+
+
+
+
+
+
 /* Footer */
 
 footer {
@@ -161,41 +355,5 @@ footer {
 
 
 
-/* suhaib's code  */
-
-.max{
-    border: groove;
-    border-color: sienna;
-    margin-bottom: 50px;
-}
-.container{
-    
-display: grid;
-grid-template-columns: repeat(8, 1fr);
-grid-template-rows: repeat(8, 5vw);
-grid-gap: 5%;
-/* border-style: solid;
-    border-color: darkgoldenrod; */
-    
-}
 
 
-
-
-
-/* 
-#imgsDiv {
-    display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px
-  }
-  
-  .wow{
-    flex: 50%;
-    padding: 0 4px;
-  }
-  
-  .wow img{
-    margin-top: 8px;
-    vertical-align: middle;
-  } */
