@@ -5,19 +5,22 @@ let dislikeArr = [];
 let boughtArr = [];
 let namesArr = [];
 
-function updateStorage() {
+
+// suhaib's function for saving
+
+// function updateStorage() {
 
 
-  let stringArr = JSON.stringify(Product.all);
-  localStorage.setItem('product', stringArr);
+//   let stringArr = JSON.stringify(Product.all);
+//   localStorage.setItem('product', stringArr);
 
 
-}
+// }
 
-updateStorage();
+// updateStorage();
 
 
-
+savingAllItems();
 
 // standing alone functios...
 let parent = document.getElementById('table');
@@ -141,23 +144,28 @@ headerRow()
 
 
 function productsVotes() {
-  let data = localStorage.getItem('product');
+  let data = localStorage.getItem('allProducts');
   let parsedArr = JSON.parse(data);
 
 
 
-
+  
 
   if (parsedArr !== null) {
     Product.all = [];
     for (let i = 0; i < parsedArr.length; i++) {
-      let newProduct = new Product(parsedArr[i].like, parsedArr[i].dislike, parsedArr[i].bought);
+      let newProduct = new Product(parsedArr[i].name,parsedArr[i].filePath,parsedArr[i].address,parsedArr[i].price,parsedArr[i].rooms,parsedArr[i].contactus,parsedArr[i].like, parsedArr[i].dislike, parsedArr[i].bought);
       // newProduct.name = parsedArr[i].name;
 
       newProduct.like = parsedArr[i].like;
       newProduct.dislike = parsedArr[i].dislike;
       newProduct.bought = parsedArr[i].bought;
       namesArr.push(parsedArr[i].name);
+      likeArr.push(parsedArr[i].like);
+      dislikeArr.push(parsedArr[i].dislike);
+      boughtArr.push(parsedArr[i].bought)
+      console.log(likeArr);
+
     }
 
   }
