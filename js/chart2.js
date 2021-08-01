@@ -23,14 +23,14 @@ let namesArr = [];
 savingAllItems();
 
 // standing alone functios...
-let parent = document.getElementById('table');
+let parent = document.getElementById('tbody');
 
 function headerRow() {
-  let headingRow = document.createElement('tr');
-  table.appendChild(headingRow);
-  let emptyCell = document.createElement('th');
-  headingRow.appendChild(emptyCell);
-  emptyCell.textContent = 'Name';
+  // let headingRow = document.createElement('tr');
+  // table.appendChild(headingRow);
+  // let emptyCell = document.createElement('th');
+  // headingRow.appendChild(emptyCell);
+  // emptyCell.textContent = 'User Name';
 
   // let paraRow=document.createElement('tr');
   // headingRow.appendChild(paraRow);
@@ -38,17 +38,18 @@ function headerRow() {
   // paraRow.appendChild(thPara);
   // thPara.textContent=Product.all[i];
 
-for(let w=0;w<Product.all.length;w++){
-  let thPara=document.createElement('th');
-  headingRow.appendChild(thPara);
-  thPara.textContent=Product[w];
-}
-
+// for(let w=0;w<Product.all.length;w++){
+//   let thPara=document.createElement('th');
+//   headingRow.appendChild(thPara);
+//   thPara.textContent=Product[w];
+// }
+let data = localStorage.getItem('allProducts');
+  let parcedArray = JSON.parse(data);
 
   for (let i = 0; i < Product.all.length; i++) {
 
 let trElement=document.createElement('tr')
-table.appendChild(trElement);
+tbody.appendChild(trElement);
 trElement.textContent=Product.all[i].name;
 
 let firstTd = document.createElement('td');
@@ -88,6 +89,22 @@ trElement.appendChild(ninthTd);
 ninthTd.textContent = Product.all[i].bought;
 
 
+// let tr = document.createElement('tr');
+//     tbody.appendChild(tr);
+    let tdDelete = document.createElement('td');
+    trElement.appendChild(tdDelete);
+
+    let deletebtn = document.createElement('button');
+    deletebtn.textContent = 'X';
+    deletebtn.id = i;    
+    tdDelete.appendChild(deletebtn);
+    // let tdQuantity = document.createElement('td');
+    // trElement.appendChild(tdQuantity);
+    // tdQuantity.textContent = parcedArray[i].quantity;
+    // let tdItem = document.createElement('td');
+    // trElement.appendChild(tdItem);
+    // tdItem.textContent = parcedArray[i].product;
+    deletebtn.addEventListener('click', removeItemFromCart);
 
 
   } 
@@ -96,10 +113,30 @@ ninthTd.textContent = Product.all[i].bought;
 
 headerRow() 
 
+function renderCart() {
+  productsVotes()
+  clearCart();
+  headerRow()
+  
+  
+}
 
+function clearCart() {
+  tbody.textContent = "";
+}
 
+function removeItemFromCart(event) {
+  if (event.target.id !== null) {   
+    cart.items.splice(event.target.id, 1);
+    localStorage.clear();
+    let cartARR = JSON.stringify(cart.items);
+    localStorage.setItem('allProducts', cartARR);
+    renderCart();
+  }
+ 
+}
 
-
+renderCart();
 
 
 // protoype is not working for making the table !!!!
@@ -324,3 +361,70 @@ productsVotes();
 // }
 
 // headerRow()
+
+
+
+
+// lab14's code just for refrence.
+
+
+// const table = document.getElementById('table');
+
+// let cart;
+
+// function loadCart() {
+//   const cartItems = JSON.parse(localStorage.getItem('allProducts')) || [];
+//   cart = new Cart(cartItems);
+// }
+
+
+// function renderCart() {
+//   loadCart();
+//   clearCart();
+//   showCart();
+// }
+
+
+// function clearCart() {
+//   tbody.textContent = "";
+// }
+
+
+// function showCart() {
+
+  
+//   let tbody = document.getElementById('tbody');
+//   let data = localStorage.getItem('allProducts');
+//   let parcedArray = JSON.parse(data);
+//   for (let i = 0; i < parcedArray.length; i++) {
+//     let tr = document.createElement('tr');
+//     tbody.appendChild(tr);
+//     let tdDelete = document.createElement('td');
+//     tr.appendChild(tdDelete);
+
+//     let deletebtn = document.createElement('button');
+//     deletebtn.textContent = 'X';
+//     deletebtn.id = i;    
+//     tdDelete.appendChild(deletebtn);
+//     let tdQuantity = document.createElement('td');
+//     tr.appendChild(tdQuantity);
+//     tdQuantity.textContent = parcedArray[i].quantity;
+//     let tdItem = document.createElement('td');
+//     tr.appendChild(tdItem);
+//     tdItem.textContent = parcedArray[i].product;
+//     deletebtn.addEventListener('click', removeItemFromCart);
+//   }
+// }
+
+// function removeItemFromCart(event) {
+//   if (event.target.id !== null) {   
+//     cart.items.splice(event.target.id, 1);
+//     localStorage.clear();
+//     let cartARR = JSON.stringify(cart.items);
+//     localStorage.setItem('allProducts', cartARR);
+//     renderCart();
+//   }
+ 
+// }
+
+// renderCart();
