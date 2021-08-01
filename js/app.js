@@ -89,8 +89,13 @@ function clickPicture(event) {
     let chooseIndex = event.target.id;
     let name = Product.all[chooseIndex].name;
     let filePath = Product.all[chooseIndex].filePath;
-    SelectedItem.all=[];
+    SelectedItem.all = [];
     let item = new SelectedItem(chooseIndex, name, filePath);
+
+    let buyBtn = document.getElementById('buyButton');
+    buyBtn.id = chooseIndex;
+    buyBtn.addEventListener('click', goToregister(event));
+
     saveToLocalStorage();
     //render features
     renderFeatures(chooseIndex);
@@ -98,7 +103,7 @@ function clickPicture(event) {
 
 prepareLinks();
 
-function renderFeatures(id){
+function renderFeatures(id) {
     let chosenImg = document.getElementById('selectedItem');
     chosenImg.src = Product.all[id].filePath;
 
@@ -107,15 +112,17 @@ function renderFeatures(id){
     let address = document.getElementById('address');
     let phoneNo = document.getElementById('contactus');
     let like = document.getElementById('like');
-    let buy = document.getElementById('bought');    
+    let buy = document.getElementById('bought');
 
     productName.textContent = Product.all[id].name;
     price.textContent = Product.all[id].price;
     address.textContent = Product.all[id].address;
     phoneNo.textContent = Product.all[id].contactus;
     like.textContent = Product.all[id].like;
-    buy.textContent = Product.all[id].bought;
-    // console.log(productName,price,like);
+}
+
+function goToregister(event){
+    document.location.href = "register.html";
 }
 
 renderFeatures(0);//to render the features section om=n page load
