@@ -26,8 +26,15 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     this.dislike = dislike;
     this.bought = bought;
     Product.all.push(this);
+    savingAllItems()
 }
 Product.all = [];
+
+
+function savingAllItems() {
+    let stringedArr=JSON.stringify(Product.all)
+    localStorage.setItem('allProducts',stringedArr)
+}
 
 
 //create 10 objects
