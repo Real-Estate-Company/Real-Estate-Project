@@ -1,6 +1,4 @@
 "use strict"
-
-
 // First Constructor 
 const SelectedItem = function (id, name, filePath) {
     this.id = id;
@@ -14,6 +12,16 @@ const saveToLocalStorage = function () {
     localStorage.setItem('selectedItem', JSON.stringify(SelectedItem.all));
 };
 
+function savingAllItems() {
+
+    if (localStorage.getItem("allProducts") === null) {
+        let stringedArr = JSON.stringify(Product.all);
+        localStorage.setItem('allProducts', stringedArr);
+    }
+}
+
+
+
 //Second Constructor
 const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
     this.name = name;
@@ -25,14 +33,13 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     this.like = like;
     this.dislike = dislike;
     this.bought = bought;
-    Product.all.push(this);
+    Product.parcedArray.push(this);
     savingAllItems()
 }
-Product.all = [];
+Product.parcedArray = [];
 
 
 function savingAllItems() {
-
     if (localStorage.getItem("allProducts") === null) {
         let stringedArr = JSON.stringify(Product.all);
         localStorage.setItem('allProducts', stringedArr);
@@ -64,18 +71,22 @@ generateObjects();
 
 //add links to images
 function prepareLinks() {
+
+
+
     if (window.location.pathname == '/index.html') {
         for (let i = 0; i < Product.all.length; i++) {
             let selectedImg = document.getElementById(i);
             selectedImg.addEventListener('click', clickPicture);
         }
+
     }
 }
 
 function clickPicture(event) {
     let chooseIndex = event.target.id;
-    let name = Product.all[chooseIndex].name;
-    let filePath = Product.all[chooseIndex].filePath;
+    let name = Product.parcedArray[chooseIndex].name;
+    let filePath = Product.parcedArray[chooseIndex].filePath;
     SelectedItem.all = [];
     let item = new SelectedItem(chooseIndex, name, filePath);
 
@@ -91,6 +102,8 @@ function clickPicture(event) {
 
 
 function renderFeatures(id) {
+
+
     if (window.location.pathname == '/index.html') {
         let chosenImg = document.getElementById('selectedItem');
         chosenImg.src = Product.all[id].filePath;
@@ -108,6 +121,7 @@ function renderFeatures(id) {
         phoneNo.textContent = Product.all[id].contactus;
         like.textContent = Product.all[id].like;
     }
+
 }
 
 function goToregister() {

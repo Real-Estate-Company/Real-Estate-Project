@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Control</title>
@@ -33,47 +37,57 @@
 
     <Main>
         <div id="selection-bar">
-            <select>
-                <option value="0"> Select Option</option>
-                <option value="1">product</option>
-                <option value="2">User</option>
+            <select id='selectionBar'> 
+                <option value="0">product</option>
+                <option value="1">User</option>
             </select>
         </div>
+        
 
-
-        <div>
-            <table id='Control-table'>
-                <tr>
-                    <th>user1</th>
-                    <th>user2</th>
-                    <th>user3</th>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>16</td>
-                    <td>18</td>
-                </tr>
-                <tr>
-                    <td>44</td>
-                    <td>44</td>
-                    <td>44</td>
-                </tr>
+        <div id='controlTable'>
+            <table id='table'> 
+                <thead>
+                    <!-- <tr>
+                      <th>User Name</th>
+                      <th>Property</th>
+                      <th>filePath</th>
+                      <th>address</th>
+                      <th>price</th>
+                      <th> rooms</th>
+                      <th>contactus</th>
+                      <th>like</th>
+                      <th>dislike</th>
+                      <th> bought</th>
+                      <th>Remove</th>
+                      
+                    </tr> -->
+                  </thead>
+                  <tbody id="tbody"></tbody>
+                  <tfoot></tfoot>
             </table>
+            <table id="userTable"></table>
+
+            <table id="userTable"></table>
 
         </div>
         <div>
+            <button id="button">Retrieve Data</button>
             <canvas id='myChart'></canvas>
 
 
         </div>
     </Main>
 
-    <footer></footer>
+    <footer id="foot"></footer>
     <!-- <div>
         <canvas id="myChart"></canvas>
       </div> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/js/chart.js"></script>
+    <!-- <SCript src="js/app.js"></SCript> -->
+
+    <script src="js/chart.js"></script>
+
+
 </body>
 
 </html>
