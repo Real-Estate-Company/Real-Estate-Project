@@ -492,19 +492,6 @@ main div ul li {
     grid-gap: 5%;
     width: 100%;
 }
-
-#input {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    right: 30%;
-    top: 30%;
-}
-
-#input li {
-    padding: 5%;
-}
-
 #form {
     margin-left: 10%;
     margin-top: 5%;
@@ -530,6 +517,20 @@ fieldset {
     background-color: darkgrey;
     color: whitesmoke;
 }
+#ulinput {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 30%;
+    top: 60%;
+
+}
+
+#ulinput li {
+    padding: 5%;
+}
+
+
 
 /* Footer */
 

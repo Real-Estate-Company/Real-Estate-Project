@@ -7,95 +7,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    
+
     <title>Register</title>
 </head>
 
 <body>
     <header>
+
+
         <nav>
-            <img src="assets/Logo.png">
+            <img src="assets/Logo.png" onclick="location.href ='/index.html'">
             <h1>REAL ESTATE COMPANY</h1>
             <ul>
-                <!-- <li>
-                    <a href="#">Real-Estates</a>
+                <li>
+                    <a href="aboutus.html">About Us</a>
                 </li>
                 <li>
-                    <a href="#">About Us</a>
-                </li> -->
-                <li>
-                    <a href="#">About Us</a>
+                    <a href="products.html">Real-Estates</a>
                 </li>
                 <li>
-                    <a href="#">Real-Estates</a>
+                    <a href="control.html">Control</a>
                 </li>
             </ul>
         </nav>
+
+
+
     </header>
 
     <main>
-        <div>
+ 
 
-            <div id="data">
-
-                <div class="container2">
-                    <img id="imgZ" src="https://via.placeholder.com/300x300/ddd">
-                    <!-- <img class="placeholder" src="https://via.placeholder.com/200x200/ddd">
-            <img class="placeholder" src="https://via.placeholder.com/100x100/ddd"> -->
-                    <a class="like2" href="#">👍</a> <a class="dislike2" href="#">👎</a>
-
-
-                </div>
-
-                <ul id="input">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                </ul>
-
-
-
-            </div>
-
-
-
+            <!-- Aseel Abusaifan -->
             <div id="fff">
-                <form id="form">
-                    <fieldset>
 
-                        <label for="nameField">User Name :</label>
-                        <input type="text" name="nameField" id="nameField">
+                <form id="form" action="#" method="post">
+                    <fieldset style="width: 300px;">
+                        <br>
+                        <div class="form-box">
+                            <label for="nameField">User Name : </label>
+                            <input type="text" id="nameField" required  placeholder="first name/last name " />
+                        </div>
+                        <br>
+                        <div class="form-box">
+                            <label for="emailField">E-mail</label>
+                            <input type="email" id="emailField" required placeholder="real-stat@gmail.com">
+                        </div>
+                        <br>
 
+                        <div class="form-box" data-errornsg="">
+                            <label for="numberFiled"> phone number </label>
+                            <input type="number" id="numberFiled" required placeholder=" +96265558622 " />
+                        </div>
                         <br>
-                        <br>
-                        <label for="emailField">E-mail :</label>
-                        <input type="number" name="emailField" id="emailField">
-                        <br>
-                        <br>
-                        <label for="phoneField">Phone Number :</label>
-                        <input type="number" name="phoneField" id="phoneField">
-                        <br>
-                        <br>
-                        <label for="cashField">Pay in Cash</label>
-                        <input type="checkbox" name="cashField" id="cashField">
-                        <br>
-                        <label for="visaField"> Pay by VISA</label>
-                        <input type="checkbox" name="visaField" id="visaField">
-                        <br>
-                        <br>
-                        <input id="formButton" type="submit">
 
 
+                        <div class="form-box">
 
+                            <input id="formButton" type="submit">
+                            <button type="reset" id='button cancel'> cancel</button>
+                        </div>
+                        <br>
+                        <br>
                     </fieldset>
                 </form>
+<!-- Aseel Abusaifan-->
+
+
+
+
             </div>
+           
+            <div>
+                
 
+                <img id="imgregister" src="https://via.placeholder.com/300x300/ddd" width="350px" height="350px">
 
-        </div>
+                <ul id="ulinput">
+                    <li id="one"></li>
+                    <li id="tow"></li>
+                    <li id="Three"></li>
+                    <li id="four"></li>
+                </ul>
+
+            </div>
+       
     </main>
     <footer>
+
+        <script src="js/app.js"></script>
+        <script src="js/register.js"></script>
 
     </footer>
 
