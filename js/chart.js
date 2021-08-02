@@ -24,18 +24,60 @@ let namesArrr = [];
 // funtion to store all objects again in LS
 
 
+// let Productbutton = document.getElementById('selectionBar');
 
 
+// usertButton.addEventListener("click", chooseUser() {
+//     let options = usertButton.querySelectorAll("option");
+//     let count = options.length;
+//     if(typeof(count) === "undefined" || count < 2)
+//     {
+//       headerRow();
+//     }
+// });
 
+// usertButton.addEventListener("change", chooseUser() {
+//     if(usertButton.value == "addNew")
+//     {
+//         addActivityItem();
+//     }
+// });
+
+
+// }
+
+
+// var x = document.getElementById("selectionBar").selectedIndex;
+//   alert(document.getElementsByTagName("option")[x].value);
 
 // standing alone functios...
-let parent = document.getElementById('tbody');
+
+
+// let parent = document.getElementById('tbody');
 let data = localStorage.getItem('allProducts');
 let parcedArray = JSON.parse(data);
 console.log(data);
 
+
+// document.getElementsByTagName("option")[Productbutton].value;
+// let Productbutton = document.getElementById('selectionBar');
+
+// Productbutton.addEventListener('change', headerRow);
+
+
+
+// let ProductButton = document.getElementById('selectionBar');
+// ProductButton.addEventListener('input', headerRow);
+
 function headerRow() {
-  console.log('parsedd', parcedArray);
+  let tableProductDiv = document.getElementById('controlTable');
+   let productTable = document.createElement('table');
+   tableProductDiv.appendChild(productTable);
+  // let select=ev.target;
+  
+  let tableBody = document.createElement('tbody')
+  productTable.appendChild(tableBody);
+  
   // let headingRow = document.createElement('tr');
   // table.appendChild(headingRow);
   // let emptyCell = document.createElement('th');
@@ -55,7 +97,7 @@ function headerRow() {
   // }
 
   let tr = document.createElement('tr')
-  parent.appendChild(tr);
+  tableBody.appendChild(tr);
   let thElement = document.createElement('th');
   tr.appendChild(thElement);
   thElement.textContent = 'Products table';
@@ -104,7 +146,7 @@ function headerRow() {
   for (let i = 0; i < parcedArray.length; i++) {
 
     let trElement = document.createElement('tr')
-    tbody.appendChild(trElement);
+    tableBody.appendChild(trElement);
     trElement.textContent = '.';
 
     let firstTd = document.createElement('td');
@@ -163,21 +205,27 @@ function headerRow() {
 
     namesArrr.push(parcedArray[i].name);
   }
-
+  // productTable.textContent = "";
+  // userTable.textContent="";
+  
+  // ProductButton.removeEventListener('change', headerRow);
 }
 
 // headerRow()
 
 function renderCart() {
-  productsVotes()
   clearCart();
-  headerRow()
-
+  productsVotes();
+  
+  
 
 }
 
 function clearCart() {
-  tbody.textContent = "";
+  // productTable.textContent = "";
+  // userTable.textContent="";
+  
+  
 }
 
 function removeItemFromCart(event) {
@@ -194,32 +242,7 @@ function removeItemFromCart(event) {
 renderCart();
 
 
-// protoype is not working for making the table !!!!
 
-// Product.prototype.render = function () {
-
-
-
-//   let trElement = document.createElement('tr')
-//   table.appendChild(trElement);
-
-//   let nameTd = document.createElement('td');
-//   trElement.appendChild(nameTd);
-//   nameTd.textContent = Product.all.name;
-
-// console.log(Product.all);
-
-//   for (let k = 0; k < Product.all.length; k++) {
-
-
-//     let likesTd = document.createElement('td');
-//     table.appendChild(likesTd);
-//     likesTd.textContent = Product.all[k].like;
-//     nameTd.textContent = Product.all[k].name;
-
-
-//   }
-// }
 
 
 
@@ -261,31 +284,49 @@ function productsVotes() {
 
 
 
+function SelectRedirect() {
+  switch (document.getElementById('selectionBar').value) {
+    case "Product":
+      headerRow();
+      break;
+    case "User":
+      chooseUser();
+      break;
+    
+  }
+
+}
+SelectRedirect();
 
 
 
+let User = [];
+// function getValue(){
+
+// let usertButton = document.getElementById('selectionBar').value;
+// usertButton.addEventListener('input', chooseUser);
 
 
+// getValue();
 
+// let usertButton = document.getElementById('selectionBar');
+// usertButton.addEventListener('change', chooseUser);
 
-let User=[];
-
-
-
-let usertButton = document.getElementById('selectionBar');
-usertButton.addEventListener('change', chooseUser);
-
-function chooseUser(event) {
+function chooseUser() {
   // userTable
-  let tableUser = document.getElementById('userTable');
+  // let select =ev.target;
+  let tableUserDiv = document.getElementById('controlTable');
+  let userTable = document.createElement('table');
+  tableUserDiv.appendChild(userTable);
+
   let header = document.createElement('tr');
-  tableUser.appendChild(header);
+  userTable.appendChild(header);
 
   let userNameTh = document.createElement('th');
   header.appendChild(userNameTh);
   userNameTh.textContent = 'user Name';
 
-  let userNameInfo= document.createElement('td');
+  let userNameInfo = document.createElement('td');
   userNameTh.appendChild(userNameInfo);
   userNameInfo.textContent = 'Suhaib';
 
@@ -293,7 +334,7 @@ function chooseUser(event) {
   header.appendChild(EmailTh);
   EmailTh.textContent = 'Email';
 
-  let userEmailInfo= document.createElement('td');
+  let userEmailInfo = document.createElement('td');
   EmailTh.appendChild(userEmailInfo);
   userEmailInfo.textContent = 'Suhaib@gmail.com';
 
@@ -301,12 +342,14 @@ function chooseUser(event) {
   header.appendChild(phoneNumberlTh);
   phoneNumberlTh.textContent = 'phoneNumber';
 
-  let phoneNumberInfo= document.createElement('td');
+  let phoneNumberInfo = document.createElement('td');
   phoneNumberlTh.appendChild(phoneNumberInfo);
   phoneNumberInfo.textContent = 'o77788889';
-  
 
-console.log(tableUser);
+  // usertButton.removeEventListener('change', chooseUser);
+  // productTable.textContent = "";
+  // userTable.textContent="";
+  
 }
 
 
@@ -362,135 +405,8 @@ productsVotes();
 
 
 
-// function headerRow() {
-//   let headingRow = document.createElement('tr');
-//   table.appendChild(headingRow);
-//   let emptyCell = document.createElement('th');
-//   headingRow.appendChild(emptyCell);
-//   emptyCell.textContent = 'Name';
-//   for (let i = 0; i < Product.all.length; i++) {
-//     let thElement = document.createElement('th');
-//     headingRow.appendChild(thElement);
-//     thElement.textContent = Product.all[i].name;
-
-//     let firstTd = document.createElement('td');
-//     headingRow.appendChild(firstTd);
-//     firstTd.textContent = Product.all[i].like;
-
-//     let secondTd = document.createElement('td');
-//     headingRow.appendChild(secondTd);
-//     secondTd.textContent = Product.all[i].dislike;
-
-//     let lastTd = document.createElement('td');
-//     headingRow.appendChild(lastTd);
-//     lastTd.textContent = Product.all[i].bought;
-
-// function productsVotes() {
-//   let data = localStorage.getItem('product');
-//   let parsedArr = JSON.parse(data);
-
-//   }
-
-//   // let contentRow=document.createElement('tr');
-//   // headingRow.appendChild(contentRow);
-
-
-// }
-
-// headerRow()
 
 
 
 
-// function showChart() {
-//   const data = {
-//     labels: namesArr,
-//     datasets: [{
-//       label: 'likes',
-//       data: likeArr,
-//       backgroundColor: [
-//         'rgba(255, 99, 132, 0.2)',
-//         'rgba(255, 159, 64, 0.2)',
-//         'rgba(255, 205, 86, 0.2)',
-//         'rgba(75, 192, 192, 0.2)',
-//         'rgba(54, 162, 235, 0.2)',
-//         'rgba(153, 102, 255, 0.2)',
-//         'rgba(201, 203, 207, 0.2)'
-//       ],
-//       borderColor: [
-//         'rgb(255, 99, 132)',
-//         'rgb(255, 159, 64)',
-//         'rgb(255, 205, 86)',
-//         'rgb(75, 192, 192)',
-//         'rgb(54, 162, 235)',
-//         'rgb(153, 102, 255)',
-//         'rgb(201, 203, 207)'
-//       ],
-//       borderWidth: 1
-//     },
-//     {
-//       label: 'dislikes',
-//       data: dislikeArr,
-//       backgroundColor: [
-//         'rgba(255, 99, 132, 0.2)',
-//         'rgba(255, 159, 64, 0.2)',
-//         'rgba(255, 205, 86, 0.2)',
-//         'rgba(75, 192, 192, 0.2)',
-//         'rgba(54, 162, 235, 0.2)',
-//         'rgba(153, 102, 255, 0.2)',
-//         'rgba(201, 203, 207, 0.2)'
-//       ],
-//       borderColor: [
-//         'rgb(255, 99, 132)',
-//         'rgb(255, 159, 64)',
-//         'rgb(255, 205, 86)',
-//         'rgb(75, 192, 192)',
-//         'rgb(54, 162, 235)',
-//         'rgb(153, 102, 255)',
-//         'rgb(201, 203, 207)'
-//       ],
-//       borderWidth: 1
-//     }
-//       ,
-//     {
-//       label: 'bought',
-//       data: boughtArr,
-//       backgroundColor: [
-//         'rgba(255, 99, 132, 0.2)',
-//         'rgba(255, 159, 64, 0.2)',
-//         'rgba(255, 205, 86, 0.2)',
-//         'rgba(75, 192, 192, 0.2)',
-//         'rgba(54, 162, 235, 0.2)',
-//         'rgba(153, 102, 255, 0.2)',
-//         'rgba(201, 203, 207, 0.2)'
-//       ],
-//       borderColor: [
-//         'rgb(255, 99, 132)',
-//         'rgb(255, 159, 64)',
-//         'rgb(255, 205, 86)',
-//         'rgb(75, 192, 192)',
-//         'rgb(54, 162, 235)',
-//         'rgb(153, 102, 255)',
-//         'rgb(201, 203, 207)'
-//       ],
-//       borderWidth: 1
-//     }
-//     ]
-//   };
-//   const config = {
-//     type: 'bar',
-//     data: data,
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true
-//         }
-//       }
-//     },
-//   };
-//   var myChart = new Chart(
-//     document.getElementById('myChart'),
-//     config
-//   );
-// }
-// showChart();
+
