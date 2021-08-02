@@ -34,19 +34,21 @@
 
     </header>
 
-
+    <!-- onchange="headerRow()" -->
+    <!-- onChange="SelectRedirect();" -->
     <Main>
         <div id="selection-bar">
-            <select id='selectionBar'> 
-                <option value="0">product</option>
-                <option value="1">User</option>
+            <select  id='selectionBar' NAME="section" onChange="SelectRedirect();"> 
+                <option value="menu">menu</option>
+                <option  value="Product">product</option>
+                <option value="User">User</option>
             </select>
         </div>
         
 
         <div id='controlTable'>
-            <table id='table'> 
-                <thead>
+            <!-- <table id='table'> 
+                <thead> -->
                     <!-- <tr>
                       <th>User Name</th>
                       <th>Property</th>
@@ -61,13 +63,13 @@
                       <th>Remove</th>
                       
                     </tr> -->
-                  </thead>
+                  <!-- </thead>
                   <tbody id="tbody"></tbody>
                   <tfoot></tfoot>
-            </table>
-            <table id="userTable"></table>
+            </table> -->
+            
 
-            <table id="userTable"></table>
+            
 
         </div>
         <div>
