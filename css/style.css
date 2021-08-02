@@ -386,7 +386,7 @@ footer {
 main div ul {
     margin: 0;
     padding: 0;
-    position: absolute;
+    /* position: absolute; */
     right: 0%;
     top: 10%;
 }
@@ -541,6 +541,11 @@ footer {
 
 * {
     box-sizing: border-box
+}
+
+#grand{
+/* float: left; */
+
 }
 
 
