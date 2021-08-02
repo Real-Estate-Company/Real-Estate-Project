@@ -80,11 +80,12 @@ const SaveUserInfo = function () {
 }
 
 //user constructor
-function User(productid, user_name, Email, phoneNumber) {
+function User(productid, user_name, Email, phoneNumber,) {
     this.productid = productid;
     this.user_name = user_name;
     this.Email = Email;
     this.phoneNumber = phoneNumber;
+  
     
     User.all.push(this);
     SaveUserInfo();
