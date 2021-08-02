@@ -40,11 +40,10 @@ Product.parcedArray = [];
 
 
 function savingAllItems() {
-
-    let stringedArr=JSON.stringify(Product.parcedArray)
-    localStorage.setItem('allProducts',stringedArr)
-
-
+    if (localStorage.getItem("allProducts") === null) {
+        let stringedArr = JSON.stringify(Product.all);
+        localStorage.setItem('allProducts', stringedArr);
+    }
 }
 
 
@@ -93,14 +92,14 @@ function clickPicture(event) {
 
     let buyBtn = document.getElementById('buyButton');
     buyBtn.id = chooseIndex;
-    
+
 
     saveToLocalStorage();
     //render features
     renderFeatures(chooseIndex);
 }
 
-prepareLinks();
+
 
 function renderFeatures(id) {
 
@@ -130,4 +129,65 @@ function goToregister() {
     document.location.href = "register.html";
 }
 
-renderFeatures(0);//to render the features section om=n page load
+// renderFeatures(0);//to render the features section om=n page load
+
+
+let grandDivElement = document.getElementById('mainSlider');
+function renderProducts() {
+    if (window.location.pathname == '/index.html') {
+        let data = localStorage.getItem('allProducts');
+        let parsedArr = JSON.parse(data);
+        for (let i = 0; i < parsedArr.length; i++) {
+            let imgNumber = parseInt(i) + 1;
+            let productDivElement = document.createElement('div');
+            productDivElement.id = "imgDiv" + i;
+            productDivElement.className = "mySlides fade";
+            grandDivElement.appendChild(productDivElement);
+
+            let productIMG = document.createElement('img');
+            productIMG.id = i;
+            productIMG.src = "img/p" + imgNumber + "/img1.jpg";
+            productDivElement.appendChild(productIMG);
+            
+
+        }
+
+    }
+}
+
+renderProducts();
+
+
+function bindSlideShow() {
+    var slideIndex = 1;
+    let slides = document.getElementsByClassName("mySlides");
+    // console.log(slides);
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+}
+
+// prepareLinks();
+bindSlideShow();
