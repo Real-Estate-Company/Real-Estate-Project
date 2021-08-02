@@ -1,4 +1,6 @@
 "use strict"
+
+
 // First Constructor 
 const SelectedItem = function (id, name, filePath) {
     this.id = id;
@@ -12,16 +14,6 @@ const saveToLocalStorage = function () {
     localStorage.setItem('selectedItem', JSON.stringify(SelectedItem.all));
 };
 
-function savingAllItems() {
-
-    if (localStorage.getItem("allProducts") === null) {
-        let stringedArr = JSON.stringify(Product.all);
-        localStorage.setItem('allProducts', stringedArr);
-    }
-}
-
-
-
 //Second Constructor
 const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
     this.name = name;
@@ -33,17 +25,15 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     this.like = like;
     this.dislike = dislike;
     this.bought = bought;
-    Product.parcedArray.push(this);
+    Product.all.push(this);
     savingAllItems()
 }
-Product.parcedArray = [];
+Product.all = [];
 
 
 function savingAllItems() {
-    if (localStorage.getItem("allProducts") === null) {
-        let stringedArr = JSON.stringify(Product.all);
-        localStorage.setItem('allProducts', stringedArr);
-    }
+    let stringedArr = JSON.stringify(Product.all)
+    localStorage.setItem('allProducts', stringedArr)
 }
 
 
@@ -71,39 +61,33 @@ generateObjects();
 
 //add links to images
 function prepareLinks() {
-
-
-
     if (window.location.pathname == '/index.html') {
         for (let i = 0; i < Product.all.length; i++) {
             let selectedImg = document.getElementById(i);
             selectedImg.addEventListener('click', clickPicture);
         }
-
     }
 }
 
 function clickPicture(event) {
     let chooseIndex = event.target.id;
-    let name = Product.parcedArray[chooseIndex].name;
-    let filePath = Product.parcedArray[chooseIndex].filePath;
+    let name = Product.all[chooseIndex].name;
+    let filePath = Product.all[chooseIndex].filePath;
     SelectedItem.all = [];
     let item = new SelectedItem(chooseIndex, name, filePath);
 
     let buyBtn = document.getElementById('buyButton');
     buyBtn.id = chooseIndex;
-
+    
 
     saveToLocalStorage();
     //render features
     renderFeatures(chooseIndex);
 }
 
-
+prepareLinks();
 
 function renderFeatures(id) {
-
-
     if (window.location.pathname == '/index.html') {
         let chosenImg = document.getElementById('selectedItem');
         chosenImg.src = Product.all[id].filePath;
@@ -121,7 +105,6 @@ function renderFeatures(id) {
         phoneNo.textContent = Product.all[id].contactus;
         like.textContent = Product.all[id].like;
     }
-
 }
 
 function goToregister() {
@@ -129,65 +112,4 @@ function goToregister() {
     document.location.href = "register.html";
 }
 
-// renderFeatures(0);//to render the features section om=n page load
-
-
-let grandDivElement = document.getElementById('mainSlider');
-function renderProducts() {
-    if (window.location.pathname == '/index.html') {
-        let data = localStorage.getItem('allProducts');
-        let parsedArr = JSON.parse(data);
-        for (let i = 0; i < parsedArr.length; i++) {
-            let imgNumber = parseInt(i) + 1;
-            let productDivElement = document.createElement('div');
-            productDivElement.id = "imgDiv" + i;
-            productDivElement.className = "mySlides fade";
-            grandDivElement.appendChild(productDivElement);
-
-            let productIMG = document.createElement('img');
-            productIMG.id = i;
-            productIMG.src = "img/p" + imgNumber + "/img1.jpg";
-            productDivElement.appendChild(productIMG);
-            
-
-        }
-
-    }
-}
-
-renderProducts();
-
-
-function bindSlideShow() {
-    var slideIndex = 1;
-    let slides = document.getElementsByClassName("mySlides");
-    // console.log(slides);
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
-}
-
-// prepareLinks();
-bindSlideShow();
+renderFeatures(0);//to render the features section om=n page load
