@@ -28,16 +28,21 @@ function headerRow() {
   let emptyCell = document.createElement('th');
   headingRow.appendChild(emptyCell);
   emptyCell.textContent = 'Name';
+  
+  
   for (let i = 0; i < Product.all.length; i++) {
     let thElement = document.createElement('th');
     headingRow.appendChild(thElement);
     thElement.textContent = Product.all[i].name;
+
     let firstTd = document.createElement('td');
     headingRow.appendChild(firstTd);
     firstTd.textContent = Product.all[i].like;
+
     let secondTd = document.createElement('td');
     headingRow.appendChild(secondTd);
     secondTd.textContent = Product.all[i].dislike;
+    
     let lastTd = document.createElement('td');
     headingRow.appendChild(lastTd);
     lastTd.textContent = Product.all[i].bought;
@@ -46,7 +51,6 @@ function headerRow() {
 }
 
 headerRow() 
-
 
 function productsVotes() {
   let data = localStorage.getItem('product');
@@ -73,6 +77,7 @@ function productsVotes() {
 
 
 }
+
 
 
 
