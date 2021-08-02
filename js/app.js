@@ -33,9 +33,19 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     this.like = like;
     this.dislike = dislike;
     this.bought = bought;
-    Product.all.push(this);
+    Product.parcedArray.push(this);
+    savingAllItems()
 }
-Product.all = [];
+Product.parcedArray = [];
+
+
+function savingAllItems() {
+
+    let stringedArr=JSON.stringify(Product.parcedArray)
+    localStorage.setItem('allProducts',stringedArr)
+
+
+}
 
 
 //create 10 objects
@@ -58,51 +68,32 @@ function generateObjects() {
 generateObjects();
 
 //Slidshow
-var slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
 
 //add links to images
 function prepareLinks() {
-    for (let i = 0; i < Product.all.length; i++) {
-        let selectedImg = document.getElementById(i);
-        selectedImg.addEventListener('click', clickPicture);
+
+
+
+    if (window.location.pathname == '/index.html') {
+        for (let i = 0; i < Product.all.length; i++) {
+            let selectedImg = document.getElementById(i);
+            selectedImg.addEventListener('click', clickPicture);
+        }
+
     }
 }
 
 function clickPicture(event) {
     let chooseIndex = event.target.id;
-    let name = Product.all[chooseIndex].name;
-    let filePath = Product.all[chooseIndex].filePath;
+    let name = Product.parcedArray[chooseIndex].name;
+    let filePath = Product.parcedArray[chooseIndex].filePath;
     SelectedItem.all = [];
     let item = new SelectedItem(chooseIndex, name, filePath);
 
     let buyBtn = document.getElementById('buyButton');
     buyBtn.id = chooseIndex;
-    buyBtn.addEventListener('click', goToregister(event));
+    
 
     saveToLocalStorage();
     //render features
@@ -112,24 +103,30 @@ function clickPicture(event) {
 prepareLinks();
 
 function renderFeatures(id) {
-    let chosenImg = document.getElementById('selectedItem');
-    chosenImg.src = Product.all[id].filePath;
 
-    let productName = document.getElementById('productName');
-    let price = document.getElementById('price');
-    let address = document.getElementById('address');
-    let phoneNo = document.getElementById('contactus');
-    let like = document.getElementById('like');
-    let buy = document.getElementById('bought');
 
-    productName.textContent = Product.all[id].name;
-    price.textContent = Product.all[id].price;
-    address.textContent = Product.all[id].address;
-    phoneNo.textContent = Product.all[id].contactus;
-    like.textContent = Product.all[id].like;
+    if (window.location.pathname == '/index.html') {
+        let chosenImg = document.getElementById('selectedItem');
+        chosenImg.src = Product.all[id].filePath;
+
+        let productName = document.getElementById('productName');
+        let price = document.getElementById('price');
+        let address = document.getElementById('address');
+        let phoneNo = document.getElementById('contactus');
+        let like = document.getElementById('like');
+        let buy = document.getElementById('bought');
+
+        productName.textContent = Product.all[id].name;
+        price.textContent = Product.all[id].price;
+        address.textContent = Product.all[id].address;
+        phoneNo.textContent = Product.all[id].contactus;
+        like.textContent = Product.all[id].like;
+    }
+
 }
 
-function goToregister(event){
+function goToregister() {
+    // buyBtn.addEventListener('click', goToregister(event));
     document.location.href = "register.html";
 }
 
