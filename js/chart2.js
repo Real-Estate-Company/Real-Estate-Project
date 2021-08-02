@@ -262,52 +262,101 @@ function productsVotes() {
 
 
 
+const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
+  this.name = name;
+  this.filePath = filePath;
+  this.address = address;
+  this.price = price;
+  this.rooms = rooms;
+  this.contactus = contactus;
+  this.like = like;
+  this.dislike = dislike;
+  this.bought = bought;
+  Product.parcedArray.push(this);
+  savingAllItems()
+}
+Product.parcedArray = [];
 
 
+function savingAllItems() {
+  let stringedArr=JSON.stringify(Product.parcedArray)
+  localStorage.setItem('allProducts',stringedArr)
+}
 
 
+//create 10 objects
+function generateObjects() {
+
+  new Product('Hacienda The Villa', 'img/p1/img1.jpg', 'Dubailand', 'USD 4,999,99', '5 Bed,5 Bath,2 parking', '600 52 2233', 0, 0, 0);
+  new Product('Hattan, Arabian Ranches', 'img/p2/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 8,995,000', '4/5 Bedrooms,6 Bath , 3 Parking', '600 52 4444', 0, 0, 0);
+  new Product('Joya Verde Residence', 'img/p3/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 495,000 ', '1 Bed,1 Bath', '600 78 1133', 0, 0, 0);
+  new Product('Lila Villas, Arabian Ranches 2', 'img/p4/img1.jpg', 'Dubai', 'USD  3,900,000', '5 Bed,4 Bath', '700 32 2833', 0, 0, 0);
+  new Product('Marina Crown, Dubai Marina', 'img/p5/img1.jpg', 'is situated just in front of Westin Hotel', 'USD 1,450,000', '2 Bed ,3 Bath,1 Parking', '800 45 233', 0, 0, 0);
+  new Product('Nad Al Sheba', 'img/p6/img1.jpg', 'in the heart of Nad Al Shebba Second', 'USD 14,000,000', '5 bedrooms,5 Bath,4 Parking', '600 77 2133', 0, 0, 0);
+  new Product('Oliva, Victory Heights', 'img/p7/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 7,200,000', '5 Bed,5 Bath,2 Parking', '600 66 2133', 0, 0, 0);
+  new Product('Picadilly Green, DAMAC Hills ', 'img/p8/img1.jpg', 'between Al Qudra Road and Hessa Street', 'USD 550,000', '6 Bed ,7 Bath,2 Parking', '900 16 2133', 0, 0, 0);
+  new Product('The Aldea, The Villa', 'img/p9/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 5,000,000 ', '5 Bed,6 Bath,2 Parking', '600 44 2133', 0, 0, 0);
+  new Product('Villa Myra', 'img/p10/img1.jpg', 'Jumeirah Village Circle', 'USD 450,000', '1 Bed,1 Bath,1 Parking', '600 33 2663', 0, 0, 0);
+}
+
+//call function 
+
+generateObjects();
 
 
-let User=[];
-
-
-
-let usertButton = document.getElementById('selectionBar');
-usertButton.addEventListener('change', chooseUser);
-
-function chooseUser(event) {
-  // userTable
-  let tableUser = document.getElementById('userTable');
-  let header = document.createElement('tr');
-  tableUser.appendChild(header);
-
-  let userNameTh = document.createElement('th');
-  header.appendChild(userNameTh);
-  userNameTh.textContent = 'user Name';
-
-  let userNameInfo= document.createElement('td');
-  userNameTh.appendChild(userNameInfo);
-  userNameInfo.textContent = 'Suhaib';
-
-  let EmailTh = document.createElement('th');
-  header.appendChild(EmailTh);
-  EmailTh.textContent = 'Email';
-
-  let userEmailInfo= document.createElement('td');
-  EmailTh.appendChild(userEmailInfo);
-  userEmailInfo.textContent = 'Suhaib@gmail.com';
-
-  let phoneNumberlTh = document.createElement('th');
-  header.appendChild(phoneNumberlTh);
-  phoneNumberlTh.textContent = 'phoneNumber';
-
-  let phoneNumberInfo= document.createElement('td');
-  phoneNumberlTh.appendChild(phoneNumberInfo);
-  phoneNumberInfo.textContent = 'o77788889';
+function retrievingData() {
+  let data = localStorage.getItem('allProducts');
+  let parsedArr = JSON.parse(data);
   
 
-console.log(tableUser);
+
+
+
+
+  if (parsedArr !== null) {
+
+
+    
+
+    parcedArray = parsedArr;
+   
+
+  }
+  // for (let i = 0; i < parsedArr.length; i++) {
+  //   let newProduct = new Product(parsedArr[i].name, parsedArr[i].filePath, parsedArr[i].address, parsedArr[i].price, parsedArr[i].rooms, parsedArr[i].contactus, parsedArr[i].like, parsedArr[i].dislike, parsedArr[i].bought);
+  //   newProduct.name = parsedArr[i].name;
+
+    // newProduct.like = parsedArr[i].like;
+    // newProduct.dislike = parsedArr[i].dislike;
+    // newProduct.bought = parsedArr[i].bought;
+    // namesArr.push(parsedArr[i].name);
+    // likeArr.push(parsedArr[i].like);
+    // dislikeArr.push(parsedArr[i].dislike);
+    // boughtArr.push(parsedArr[i].bought)
+    // console.log(likeArr);
+  //   console.log(newProduct)
+
+  // }
+  // console.log(namesArr);
+
 }
+retrievingData();
+
+
+let revertData=document.getElementById('button');
+revertData.addEventListener('click', controlClick);
+
+function controlClick(){
+  // retrievingData();
+  let foottt=document.getElementById('foot')
+  let scriptTag=document.createElement('script');
+  scriptTag.setAttribute('src', 'js/chart2.js');
+  foottt.appendChild(scriptTag);
+  scriptTag.textContent='js/chart2.js';
+  
+}
+
+
 
 
 function showChart() {
