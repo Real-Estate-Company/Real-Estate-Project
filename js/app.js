@@ -1,4 +1,8 @@
 "use strict"
+
+
+
+
 // First Constructor 
 const SelectedItem = function (id, name, filePath) {
     this.id = id;
@@ -71,8 +75,6 @@ generateObjects();
 
 //add links to images
 function prepareLinks() {
-
-
 
     if (window.location.pathname == '/index.html') {
         for (let i = 0; i < Product.all.length; i++) {
@@ -147,9 +149,8 @@ function renderProducts() {
             let productIMG = document.createElement('img');
             productIMG.id = i;
             productIMG.src = "img/p" + imgNumber + "/img1.jpg";
+            productIMG.style.width = "100%";
             productDivElement.appendChild(productIMG);
-            
-
         }
 
     }
@@ -158,36 +159,36 @@ function renderProducts() {
 renderProducts();
 
 
-function bindSlideShow() {
-    var slideIndex = 1;
-    let slides = document.getElementsByClassName("mySlides");
-    // console.log(slides);
-    showSlides(slideIndex);
+if par
+var slideIndex = 1;
+let slides = document.getElementsByClassName("mySlides");
+console.log(slides);
+showSlides(slideIndex);
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
 
 // prepareLinks();
 bindSlideShow();
