@@ -1,7 +1,5 @@
+
 "use strict"
-
-
-
 
 // First Constructor 
 const SelectedItem = function (id, name, filePath) {
@@ -11,20 +9,9 @@ const SelectedItem = function (id, name, filePath) {
     SelectedItem.all.push(this);
 }
 SelectedItem.all = [];
-
 const saveToLocalStorage = function () {
     localStorage.setItem('selectedItem', JSON.stringify(SelectedItem.all));
 };
-
-function savingAllItems() {
-
-    if (localStorage.getItem("allProducts") === null) {
-        let stringedArr = JSON.stringify(Product.all);
-        localStorage.setItem('allProducts', stringedArr);
-    }
-}
-
-
 
 //Second Constructor
 const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
@@ -37,23 +24,17 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     this.like = like;
     this.dislike = dislike;
     this.bought = bought;
-    Product.parcedArray.push(this);
+    Product.all.push(this);
     savingAllItems()
 }
-Product.parcedArray = [];
-
+Product.all = [];
 
 function savingAllItems() {
-    if (localStorage.getItem("allProducts") === null) {
-        let stringedArr = JSON.stringify(Product.all);
-        localStorage.setItem('allProducts', stringedArr);
-    }
+    let stringedArr = JSON.stringify(Product.all)
+    localStorage.setItem('allProducts', stringedArr)
 }
-
-
 //create 10 objects
 function generateObjects() {
-
     new Product('Hacienda The Villa', 'img/p1/img1.jpg', 'Dubailand', 'USD 4,999,99', '5 Bed,5 Bath,2 parking', '600 52 2233', 0, 0, 0);
     new Product('Hattan, Arabian Ranches', 'img/p2/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 8,995,000', '4/5 Bedrooms,6 Bath , 3 Parking', '600 52 4444', 0, 0, 0);
     new Product('Joya Verde Residence', 'img/p3/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 495,000 ', '1 Bed,1 Bath', '600 78 1133', 0, 0, 0);
@@ -65,14 +46,9 @@ function generateObjects() {
     new Product('The Aldea, The Villa', 'img/p9/img1.jpg', 'Vision Tower, 42nd Floor, Dubai', 'USD 5,000,000 ', '5 Bed,6 Bath,2 Parking', '600 44 2133', 0, 0, 0);
     new Product('Villa Myra', 'img/p10/img1.jpg', 'Jumeirah Village Circle', 'USD 450,000', '1 Bed,1 Bath,1 Parking', '600 33 2663', 0, 0, 0);
 }
-
 //call function 
-
 generateObjects();
-
 //Slidshow
-
-
 //add links to images
 function prepareLinks() {
 
@@ -81,20 +57,16 @@ function prepareLinks() {
             let selectedImg = document.getElementById(i);
             selectedImg.addEventListener('click', clickPicture);
         }
-
     }
 }
-
 function clickPicture(event) {
     let chooseIndex = event.target.id;
-    let name = Product.parcedArray[chooseIndex].name;
-    let filePath = Product.parcedArray[chooseIndex].filePath;
+    let name = Product.all[chooseIndex].name;
+    let filePath = Product.all[chooseIndex].filePath;
     SelectedItem.all = [];
     let item = new SelectedItem(chooseIndex, name, filePath);
-
     let buyBtn = document.getElementById('buyButton');
     buyBtn.id = chooseIndex;
-
 
     saveToLocalStorage();
     //render features
@@ -102,34 +74,30 @@ function clickPicture(event) {
 }
 
 
+prepareLinks();
 
 function renderFeatures(id) {
-
-
     if (window.location.pathname == '/index.html') {
         let chosenImg = document.getElementById('selectedItem');
         chosenImg.src = Product.all[id].filePath;
-
         let productName = document.getElementById('productName');
         let price = document.getElementById('price');
         let address = document.getElementById('address');
         let phoneNo = document.getElementById('contactus');
         let like = document.getElementById('like');
         let buy = document.getElementById('bought');
-
         productName.textContent = Product.all[id].name;
         price.textContent = Product.all[id].price;
         address.textContent = Product.all[id].address;
         phoneNo.textContent = Product.all[id].contactus;
         like.textContent = Product.all[id].like;
     }
-
 }
-
 function goToregister() {
     // buyBtn.addEventListener('click', goToregister(event));
     document.location.href = "register.html";
 }
+
 
 // renderFeatures(0);//to render the features section om=n page load
 
@@ -159,7 +127,7 @@ function renderProducts() {
 renderProducts();
 
 
-if par
+
 var slideIndex = 1;
 let slides = document.getElementsByClassName("mySlides");
 console.log(slides);
