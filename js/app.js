@@ -1,6 +1,4 @@
 "use strict"
-
-
 // First Constructor 
 const SelectedItem = function (id, name, filePath) {
     this.id = id;
@@ -13,6 +11,16 @@ SelectedItem.all = [];
 const saveToLocalStorage = function () {
     localStorage.setItem('selectedItem', JSON.stringify(SelectedItem.all));
 };
+
+function savingAllItems() {
+
+    if (localStorage.getItem("allProducts") === null) {
+        let stringedArr = JSON.stringify(Product.all);
+        localStorage.setItem('allProducts', stringedArr);
+    }
+}
+
+
 
 //Second Constructor
 const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
