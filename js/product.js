@@ -92,6 +92,21 @@ function renderProducts() {
         //     location.href = "register.html";
         // };
 
+        let likebtn = document.createElement('button');
+        likebtn.id = i;
+        likebtn.textContent = "👍";
+        featuresDiv.appendChild(likebtn);
+
+        let dislikebtn = document.createElement('button');
+        dislikebtn.id = i;
+        dislikebtn.textContent = "👎";
+        featuresDiv.appendChild(dislikebtn);
+
+        // likebtn.addEventListener('click', voteFunction);
+        // dislikebtn.addEventListener('click', voteFunction);
+
+        likebtn.setAttribute('onClick', `likeFunction('${i}')`)
+        dislikebtn.setAttribute('onClick', `dislikeFunction('${i}')`)
     }
 }
 
@@ -115,4 +130,16 @@ function clickBtn(event) {
 
     }
 
+}
+
+function likeFunction(objectNumber) 
+{
+    Product.all[Number(objectNumber)].like++
+    savingAllItems();
+}
+
+function dislikeFunction(objectNumber) 
+{
+    Product.all[Number(objectNumber)].dislike++
+    savingAllItems();
 }
