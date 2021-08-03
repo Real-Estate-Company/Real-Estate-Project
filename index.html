@@ -12,26 +12,33 @@
 
 <body>
     <header>
-        <nav>
-            <img src="assets/Logo.png" onclick="location.href ='/index.html'">
-            <h1>REAL ESTATE COMPANY</h1>
+        <nav >
+            <img src="assets/gfdgf.png  "  location.href ='/index.html'>
+            <!-- <h1>REAL ESTATE COMPANY</h1> -->
+            
+            
             <ul>
+                <li>
+                    <a href="register.html">Register</a>
+                </li>
                 <li>
                     <a href="aboutus.html">About Us</a>
                 </li>
                 <li>
-                    <a href="products.html">Real-Estates</a>
+                    <a href="products.html">Cart</a>
                 </li>
                 <li>
                     <a href="control.html">Control</a>
                 </li>
             </ul>
+            
         </nav>
     </header>
+    
     <main>
         <!-- Slide show element -->
         <ul>
-            <li>
+            <li id="slideshow22">
                 <div class="slideshow-container" id="mainSlider">
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -59,27 +66,30 @@
 
             <!-- <img src="" id="selectedItem" /> -->
             <div>
-                <h2>Property Specifications</h2>
-                <p id="featuresP">
+                
+                <p>Property Specifications<p>
+                <p id="featuresP"></p>
                 <p id="productName"></p>
                 <p id="price"></p>
                 <p id="address"></p>
                 <p id="contactus"></p>
                 <p id="like"></p>
-
-                </p>
-                <button id="buyButton" onclick="goToregister()">ADD TO CART</button>
+          
+               <button id="buyButton" onclick="goToregister()">ADD TO CART</button>
             </div>
         </section>
     </main>
-
-    <footer></footer>
 
     <script src="js/app.js"></script>
 
     <!-- <script src="js/slideshow.js"></script> -->
 
-
+    <footer>
+        
+       <p> &copy;2021 Real-Estates</p>
+        
+        <img src="assets/midia.png "   location.href ='/index.html'>
+       </footer>
 </body>
 
 </html>

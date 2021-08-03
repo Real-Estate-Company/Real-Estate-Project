@@ -14,15 +14,18 @@
 
 <body>
     <header>
-        <nav>
-            <img src="assets/Logo.png" onclick="location.href ='/index.html'">
-            <h1>REAL ESTATE COMPANY</h1>
+        <nav >
+            <img src="assets/gfdgf.png  "  location.href ='/index.html'>
+            <!-- <h1>REAL ESTATE COMPANY</h1> -->
             <ul>
+                <li>
+                    <a href="register.html">Register</a>
+                </li>
                 <li>
                     <a href="aboutus.html">About Us</a>
                 </li>
                 <li>
-                    <a href="products.html">Real-Estates</a>
+                    <a href="products.html">Products</a>
                 </li>
                 <li>
                     <a href="control.html">Control</a>
@@ -42,12 +45,22 @@
         </div>
         <table id='controlTable'>
         </table>
-        <div>
-            <button id="revertbtn">Revert Data</button>
+        <div><button id="revertbtn">Revert Data</button></div>
+        <div><select name="chartList" id="chartList">
+            <option value="hide" selected>Hide user chart</option>
+            <option value="show" >Show user chart</option>
+            
+        </select>>
+        </div>
+        <div id="hideThis">
+            
             <canvas id='myChart'></canvas>
         </div>
     </Main>
-    <footer id="foot"></footer>    
+
+    <footer id="foot"></footer>
+    <p> &copy;2021 Real-Estates</p>
+    <img src="assets/midia.png "   location.href ='/index.html'>    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <SCript src="js/app.js"></SCript> -->
     <script src="js/chart.js"></script>
