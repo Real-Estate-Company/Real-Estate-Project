@@ -242,20 +242,34 @@ function revertData() {
 }
 
 
-// boughtArrr = []
+let boughtArr = function (productID, productName, boughtNo) {
+  this.productID = productID;
+  this.prodactName = productName;
+  this.boughtNo = 1;
+  boughtArr.all.push(this);
+}
+boughtArr.all = [];
+
 
 function extractBought() {
+
   for (let i = 0; i < userDataArr.length; i++) {
     let index = userDataArr[i].productid;
-    let productname = parsedArr[index].name;
-    boughtArrr.push(productname);
+    let productname = parcedArray[index].name;
+    let boughtItem = new boughtArr(index, productname, boughtArr.boughtNo++);
+    
+
+    console.log(boughtItem);
+    console.log(boughtArr.bought);
   }
 }
 
 
-//Chart is not working
+extractBought();
+// console.log(boughtArr.all);
+let buyLabel = boughtArr.all.boughtNo;
 
-// /Chart
+//Chart is not working
 function showChart() {
   const data = {
     labels: namesArrr,

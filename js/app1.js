@@ -22,19 +22,19 @@ const Product = function (name, filePath, address, price, rooms, contactus, id, 
     this.price = price;
     this.rooms = rooms;
     this.contactus = contactus;
-    this.id =
-        this.bought = bought;
+    this.id = 
+    this.bought = bought;
     Product.all.push(this);
-    // savingAllItems();
+    savingAllItems();
 }
 // Product.all = JSON.parse(localStorage.getItem('allProducts')) || [];
 Product.all = [];
 
 function savingAllItems() {
-    for (let index = 0; index < Product.all.length; index++) {
-        let stringedArr = JSON.stringify(Product.all);
-        localStorage.setItem('allProducts', stringedArr);
-    }
+    // if (localStorage.getItem('allProducts') === null) {
+    let stringedArr = JSON.stringify(Product.all)
+    localStorage.setItem('allProducts', stringedArr)
+    // }
 }
 //create 10 objects
 function generateObjects() {
@@ -50,10 +50,9 @@ function generateObjects() {
     new Product('Villa Myra', 'img/p10/img1.jpg', 'Jumeirah Village Circle', 'USD 450,000', '1 Bed,1 Bath,1 Parking', '600 33 2663', 0, 0, 0);
 }
 //call function 
-if (localStorage.getItem('allProducts') == null) {
+// if (localStorage.getItem('allProducts') == null) {
     generateObjects();
-    savingAllItems();
-}
+// }
 
 
 let grandDivElementHome = document.getElementById('mainSlider');
