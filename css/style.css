@@ -210,10 +210,10 @@ section img {
 
 
 #selection-bar {
-    margin: 20px;
+    margin-bottom: 50px;
     width: 200px;
     height: 40px;
-    position: relative;
+    
     /* float: left; */
 }
 
@@ -221,17 +221,101 @@ section img {
     width: 200px;
     height: 40px;
     /* text-align: center; */
-    background-color: rgb(54, 138, 138);
+    background-color: #30475E;
     color: cornsilk;
     font-size: 20px;
 }
 
 
+/* finished selection bar */
+
+/* table css in control html by odai sadaqa and Suhaib okour */
+#selection-bar select:hover{
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+    transition: 1s;
+}
+
+main div select{
+
+    margin-left:15px;
+    
+    
+}
+/* table:hover{
+    background-color: #FFB740;
+} */
+table {
+    border: 1px solid #30475E;
+    width: 90%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin: 30px;
+    height: 200px;
+    background-color: #E7DEC8;
+    color: #30475E;
+}
+table button{
+    background-color:#30475E;
+    color: white;
+}
+table button:hover{
+    background-color: #d13a3a;
+    transform: scale(1.8);
+
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#revertbtn{
+    margin-left:30px;
+    margin-bottom: 100px;
+    /* padding: 20px; */
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 20px;
+    background-color: #30475E;
+    color: rgba(198, 206, 165, 0.856);
+    font-family: monospace;
+    transition: 1s;
+}
+
+#revertbtn:hover{
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright:0px;
+    -moz-border-radius-bottomleft:0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+
+}
+
+
+    
+    
+    /* background-image: url('https://image.freepik.com/free-photo/paper-palm-leaf-bright-table_23-2148100591.jpg'); */
+
+/* finished table css*/
+
+/* chart css odai sadaqa */
+
 
 #myChart {
     /* padding:5px; */
-    border: 1px solid black;
-    margin: 25px;
+    border: 1px solid #30475E;
+    margin-left:3.5%;
+    margin-bottom: 10%;
+
 }
 
 /* end chart css */

@@ -145,6 +145,7 @@ function productsToArr() {
   }
 }
 
+
 //Select Element
 let ddlFilterElement = document.getElementById('ddlFilter');
 ddlFilterElement.addEventListener('change', selectRedirect);
@@ -152,9 +153,13 @@ function selectRedirect(event) {
   event.preventDefault();
   if (event.target.value == "User") {
     chooseUser();
+    
+    
   }
   else if (event.target.value == "Product") {
     productTableDraw();
+    
+    
   }
 }
 
@@ -223,6 +228,7 @@ function chooseUser() {
     let productname = parcedArray[productIdbuy].name;
     prodactName.textContent = productname;
   }
+
 }
 
 //Revert all Data
@@ -295,6 +301,44 @@ function showChart() {
     config
   );
 }
-showChart();
+
+
+
+
+
+
+
+
+// This comment is for Haneen. Delete it once you finish reading.
+// 
+// I have added a remove method instead of hiding the div (js.324), and it didn't show me the error that says:"I need to destroy the canvas first". Now when I use the new method first, it shows the chart, then it removes the chart once I click hide on the broswer,but when i try to show it again it gives me this message on console : "Failed to create chart: can't acquire context from the given item". So I think it can't show the chart again since we've already destroied it in side the if statement. 
+
+
+let addChart = document.getElementById('chartList');
+addChart.addEventListener('change', displayChart);
+function displayChart(event) {
+  event.preventDefault();
+  
+  if (event.target.value == "hide") {
+    let x=document.getElementById('myChart');
+    x.remove();
+    // document.getElementById("hideThis").style.visibility = "hidden";
+    
+  }else if (event.target.value == "show"){ 
+    showChart();
+    
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
