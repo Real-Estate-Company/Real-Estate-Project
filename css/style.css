@@ -6,41 +6,110 @@
 
 /*All body style*/
 
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Hammersmith+One&display=swap%27');
+
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #E7DEC8
+    
 }
 
-header {
-    background: seashell;
-    height: 125px;
-    margin-bottom: 30px;
-}
 
-nav {
-    width: 960px;
-    margin: 0px auto;
-}
-
-nav img {
-    /* margin-top: 10px; */
-    margin-right: 30px;
-    float: left;
-    width: 100pt;
-    height: 100pt;
-}
-
-nav li {
-    /* display: inline-block; */
-    margin-top: 6%;
-    margin-right: 3%;
-    float: right;
-}
-
-a {
-    color: maroon;
+header {  padding: 200px;
+    background-color: #30475E;
+    height:50px;
+    margin-bottom: 50px;
     text-decoration: none;
+    color: black;
+}
+nav img {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 500px;
+    bottom: 370px;
+}
+    
+
+nav ul  li { 
+   
+    display: inline-block;
+    font-size: larger;
+    position: relative;
+    left: 150px;
+    top: 100px;
+    text-align: center;
+    padding: 20px 20px 20px 50px;
+    bottom: revert;
+
+}
+nav  ul li a{ 
+
+    font-family: Arial, Helvetica, sans-serif;
+    color:#E7DEC8;
+    font-family: 'Hammersmith One', sans-serif;
+    text-decoration: none;
+
+}
+nav ul li a:hover{
+    border-radius:50%;
+    color:  #30475E;
+    background-color:#CBAF87;
+    font-family: 'Hammersmith One', sans-serif;
+    border: 20px black;
+    padding:50px;
+
+        
 }
 
+
+footer {  padding: 2%;
+    background-color:#30475E;
+    top: 250px;
+    left: 400px;
+    text-align: center;
+    color:#E7DEC8 ;
+    height:6%;
+    font-size: x-large;
+}
+footer img{
+    height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* nav li a:hover{
+
+
+ background-color: rgb(148, 111, 19);
+
+    border-radius: 100%;
+    color: black;
+
+} */
+/* 
+
+a{
+    position:relative;
+    top: 220px;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+    padding:50px;
+}
+
+   
 h1 {
     font-family: 'Abril Fatface', cursive;
     font-size: xx-large;
@@ -49,6 +118,7 @@ h1 {
     float: left;
     color: maroon;
 }
+ */
 
 main {
     width: 960px;
@@ -84,14 +154,42 @@ section img {
 
 /* Text and Button */
 /* featuesSection */
-#featuesSection div {
-    width: 50%;
+ #featuesSection{
+    background-image :url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJUl8t6a15BEB21IF61TuO93A_wt4aA3DKg&usqp=CAU");
+
+
+    background-repeat:round
+ 
+    /* opacity:0.5; */
+ }
+   
+#featuesSection{
+    border: 3px solid;
+    height: 400px;
+    width: 100%;
     /* float: right; */
-    padding-left: 30px;
+    top: 30pt;
+    padding:50px;
     margin-bottom: 30px;
+    text-align: center;
+    /* padding: 20px 30px 10px 10px ; */
+    
+} 
+#featuesSection div p { 
+
+    height: 20pt;
+/* top: 120pt; */
+
+/* top: 50px; */
+    background-color:#E7DEC8;
+    padding: 10px 10px 10px 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+   
+    
 }
 
-#featuesSection h2 {
+
+/* #featuesSection h2 {
     font-size: 18px;
     margin-bottom: 10px;
     font-family: 'Open Sans', sans-serif;
@@ -99,13 +197,13 @@ section img {
 
 #featuresP ul li {
     /* position: inherit; */
-    font-family: 'Open Sans', sans-serif;
-    height: 250px;
-    color: dimgray;
+    /* font-family: 'Open Sans', sans-serif; */
+    /* height: 250px;
+    color: dimgray; */
     /* overflow: scroll; */
     /* font-style: italic; */
-    margin-bottom: 10px;
-}
+    /* margin-bottom: 10px; */
+/* } */
 
 /* button */
 
@@ -124,7 +222,6 @@ section img {
     background: salmon;
 }
 
-/* selection bar by odi sadaqa in control html */
 
 #selection-bar {
     margin: 20px;
@@ -143,31 +240,7 @@ section img {
     font-size: 20px;
 }
 
-/* finished selection bar */
 
-/* table css in control html by odai sadaqa */
-
-table {
-    border: 1px solid black;
-    width: 90%;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    margin: 30px;
-    height: 200px;
-    background-color: cyan;
-}
-
-th, td {
-    border: 1px solid black;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    font-weight: bold;
-}
-
-/* finished table css*/
-
-/* chart css odai sadaqa */
 
 #myChart {
     /* padding:5px; */
@@ -177,7 +250,7 @@ th, td {
 
 /* end chart css */
 
-/* Aboutus.html  by odai sadaqa*/
+
 
 #Aboutus #first {
     float: left;
@@ -315,19 +388,11 @@ th, td {
     margin: 20px;
 }
 
-/* finished About us. html  by odai sadaqa*/
 
-/* Footer */
 
-footer {
-    clear: both;
-    height: 150px;
-    background: seashell;
-}
 
-/* suhaib's code  */
 
-/* suhaib's code for products  */
+
 
 .max {
     border: groove;
@@ -532,22 +597,15 @@ fieldset {
 
 
 
-/* Footer */
-
-footer {
-    clear: both;
-    height: 150px;
-    background: seashell;
-}
 
 * {
     box-sizing: border-box
 }
 
-#grand{
+/* #grand{ */
 /* float: left; */
 
-}
+/* } */
 
 
 /*Slideshow*/
@@ -559,15 +617,19 @@ footer {
 
 .mySlides {
     display: none
+
 }
 
 img {
+    /* box-shadow: 20px 20px gray; */
     vertical-align: middle;    
 }
 
 /* Slideshow container */
 
 .slideshow-container {
+    box-shadow: 5px 5px 5px 5px   #999693;
+
     max-width: 1000px;
     position: relative;
     margin: auto;    
