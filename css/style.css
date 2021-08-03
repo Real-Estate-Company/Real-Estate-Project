@@ -6,39 +6,55 @@
 
 /*All body style*/
 
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Hammersmith+One&display=swap%27');
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    background: seashell;
-    height: 125px;
-    margin-bottom: 30px;
-}
-
-nav {
-    width: 960px;
-    margin: 0px auto;
+    padding: 300px;
+    background: whitesmoke;
+    height: 90px;
+    margin-bottom: 100px;
+    text-decoration: none;
+    color: black;
 }
 
 nav img {
     /* margin-top: 10px; */
-    margin-right: 30px;
-    float: left;
-    width: 100pt;
-    height: 100pt;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 400px;
+    top: 0px;
 }
 
-nav li {
-    /* display: inline-block; */
-    margin-top: 6%;
-    margin-right: 3%;
-    float: right;
+nav ul li {
+    display: inline-block;
+    font-size: larger;
+    position: relative;
+    left: 50px;
+    top: 220px;
+    /* color:black;
+    text-decoration: none; */
+    text-align: center;
+    padding: 20px 20px 20px 50px
 }
 
-a {
-    color: maroon;
+nav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-family: 'Hammersmith One', sans-serif;
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    border-radius: 100%;
+    background-color: rgb(148, 111, 19);
+    font-family: 'Hammersmith One', sans-serif;
+    border: 20px black;
+    padding: 50px;
 }
 
 h1 {
@@ -59,7 +75,6 @@ main ul {
     margin: 30px auto;
     padding: 0px;
 }
-
 
 #HeaderImg {
     width: 960px;
@@ -83,7 +98,9 @@ section img {
 }
 
 /* Text and Button */
+
 /* featuesSection */
+
 #featuesSection div {
     width: 50%;
     /* float: right; */
@@ -329,7 +346,7 @@ footer {
 
 /* suhaib's code for products  */
 
-.max {
+/* .max {
     border: groove;
     border-color: sienna;
     margin-bottom: 50px;
@@ -342,10 +359,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
-    grid-gap: 5%;
-    /* border-style: solid;
+    grid-gap: 5%; */
+
+/* border-style: solid;
     border-color: darkgoldenrod; */
-}
+
+/* } */
 
 /* 
 #imgsDiv {
@@ -364,7 +383,7 @@ footer {
     vertical-align: middle;
   } */
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
@@ -372,10 +391,12 @@ footer {
     width: 100%;
     /* border-style: solid;
     border-color: darkgoldenrod; */
-    /* margin: 0;
+
+/* margin: 0;
     padding: 0;
     text-align: justify; */
-}
+
+/* }
 
 .placeholder {
     position: absolute;
@@ -387,15 +408,20 @@ main div ul {
     margin: 0;
     padding: 0;
     /* position: absolute; */
-    right: 0%;
-    top: 10%;
-}
 
-main div ul li {
-    padding: 10%;
-}
+/* right: 0%;
+    top: 10%; */
 
-.like {
+/* } */
+
+/* main div ul li {
+    padding: 10%; */
+
+*/
+/* } */
+
+*/
+/* .like {
     position: absolute;
     bottom: 0%;
     left: 35%;
@@ -409,9 +435,9 @@ main div ul li {
     left: 38%;
     margin: 0%;
     padding: 0%;
-}
+/* } */
 
-.like:hover {
+/* .like:hover {
     transform: scale(1.9);
     background-color: dodgerblue;
 }
@@ -423,8 +449,9 @@ main div ul li {
 
 .placeholder:hover {
     transform: scale(1.2);
-}
+} */
 
+*/
 /* register css by suhaib */
 
 #fff {
@@ -492,6 +519,7 @@ main div ul li {
     grid-gap: 5%;
     width: 100%;
 }
+
 #form {
     margin-left: 10%;
     margin-top: 5%;
@@ -517,20 +545,18 @@ fieldset {
     background-color: darkgrey;
     color: whitesmoke;
 }
+
 #ulinput {
     margin: 0;
     padding: 0;
     position: absolute;
     right: 30%;
     top: 60%;
-
 }
 
 #ulinput li {
     padding: 5%;
 }
-
-
 
 /* Footer */
 
@@ -544,11 +570,9 @@ footer {
     box-sizing: border-box
 }
 
-#grand{
-/* float: left; */
-
+#grand {
+    /* float: left; */
 }
-
 
 /*Slideshow*/
 
@@ -562,7 +586,7 @@ footer {
 }
 
 img {
-    vertical-align: middle;    
+    vertical-align: middle;
 }
 
 /* Slideshow container */
@@ -570,7 +594,7 @@ img {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    margin: auto;    
+    margin: auto;
 }
 
 /* Next & previous buttons */
@@ -676,3 +700,96 @@ img {
         font-size: 11px
     }
 }
+
+/* product page by odai sadaqa */
+
+#grand {
+    box-sizing: border-box;
+    /* display: inline; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#grand div li {
+    box-sizing: border-box;
+    border: solid 1px #30475E;
+    /* box-shadow: 200px lightgray; */
+    box-shadow: 2px 2px #888888;
+    /* box: shadow 3px lightgray ; */
+    /* border-style: ridge; */
+    /* padding: 20px; */
+    margin: 10px;
+    width: 225pt;
+    height: 400pt;
+    position: relative;
+    /* display: inline-block; */
+}
+
+#grand div li img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    /* padding: 20px; */
+}
+
+#grand div li img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    opacity: 0.6;
+}
+
+#grand div button {
+    font-family: monospace;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 15px;
+    /* display: block;
+    margin:0 auto; */
+    color: rgba(198, 206, 165, 0.856);
+    background-color: #30475E;
+    ;
+    position: absolute;
+    bottom: 10px;
+    right: 65px;
+    transition: 1s;
+}
+
+#grand div button:hover {
+    text-indent: -10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+
+#grand div li label {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 7px;
+    color: black;
+    /* display: inline; */
+    display: grid;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-style: italic; */
+    /* text-align: justify; */
+    /* background-color: blue; */
+    transition: 1s;
+}
+
+#grand div li label:hover {
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+
+/* End product page by odai Sadaqa */
