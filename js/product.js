@@ -26,9 +26,9 @@ function renderProducts() {
         let componentsListElement = document.createElement('ul');
         componentsListElement.id = "componentsList" + i;
         productDivElement.appendChild(componentsListElement);
-        componentsListElement.style.border = 'solid';
-        componentsListElement.style.padding = "20pt";
-        componentsListElement.style.margin = "20pt";
+        // componentsListElement.style.border = 'solid';
+        // componentsListElement.style.padding = "20pt";
+        // componentsListElement.style.margin = "20pt";
 
         let liProductImg = document.createElement('li');
         liProductImg.id = "productIMGLi" + i;
@@ -43,8 +43,8 @@ function renderProducts() {
         productIMG.src = parsedArr[i].filePath;
         chosenFilePath.push(parsedArr[i].filePath);
 
-        productIMG.style.width = "450pt";
-        productIMG.style.height = "300pt";
+        // productIMG.style.width = "450pt";
+        // productIMG.style.height = "300pt";
 
         let featuresDiv = document.createElement('div');
         featuresDiv.id = "featuresDiv" + i;

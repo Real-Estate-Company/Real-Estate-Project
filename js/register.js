@@ -67,6 +67,7 @@ function ShowItem() {
     phoneNo.textContent = fixedarr[index].contactus;
 
 }
+
 // let boughtproduct = [];
 
 //save information of user in localstorage 
@@ -114,17 +115,31 @@ function submitInfo(event) {
             arrBought.push(Product.all[i].bought);
             console.log('arrBought',arrBought);
         }
+        //set local storage to null
+
+        
+       
 
   }
 
-    saveProductdat();
 
-    console.log('user info', User.all);
+  
+  saveProductdat();
+  alert('Thank you for buying House');
+  localStorage.removeItem('selectedItem');
+ 
+    console.log('user info',arrayOfitem );
     // console.log('arrayOfproduct:', arrayOfproduct[index].name);
     console.log('arrayofselectedItem', arrayOfitem[0].name);
-   //   form.removeEventListener('submit',submitInfo)
 
-
+   function remove() {
+    let Divelement = document.getElementById('clear');
+    Divelement.textContent='';
+    // Divelement.parentNode.removeChild(Divelement);
+    return false;
+}
+remove();
+  
 }
 
 
@@ -133,3 +148,4 @@ function submitInfo(event) {
 //call the functions
 loadInfo();
 ShowItem();
+
