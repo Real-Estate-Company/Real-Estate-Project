@@ -8,12 +8,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Hammersmith+One&display=swap%27');
 
-
 body {
 
     background-color: #E7DEC8
     
 }
+
 
 
 header {  padding: 200px;
@@ -44,6 +44,7 @@ nav ul  li {
     padding: 20px 20px 20px 50px;
     bottom: revert;
 
+
 }
 nav  ul li a{ 
 
@@ -52,17 +53,8 @@ nav  ul li a{
     font-family: 'Hammersmith One', sans-serif;
     text-decoration: none;
 
-}
-nav ul li a:hover{
-    border-radius:50%;
-    color:  #30475E;
-    background-color:#CBAF87;
-    font-family: 'Hammersmith One', sans-serif;
-    border: 20px black;
-    padding:50px;
 
-        
-}
+
 
 
 footer {  padding: 2%;
@@ -77,17 +69,6 @@ footer {  padding: 2%;
 footer img{
     height: 100px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* nav li a:hover{
 
@@ -104,12 +85,13 @@ a{
     position:relative;
     top: 220px;
     color:black;
+
     text-decoration: none;
     text-align: center;
     padding:50px;
 }
 
-   
+
 h1 {
     font-family: 'Abril Fatface', cursive;
     font-size: xx-large;
@@ -129,7 +111,6 @@ main ul {
     margin: 30px auto;
     padding: 0px;
 }
-
 
 #HeaderImg {
     width: 960px;
@@ -153,7 +134,11 @@ section img {
 }
 
 /* Text and Button */
+
 /* featuesSection */
+
+
+
  #featuesSection{
     background-image :url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJUl8t6a15BEB21IF61TuO93A_wt4aA3DKg&usqp=CAU");
 
@@ -167,6 +152,7 @@ section img {
     border: 3px solid;
     height: 400px;
     width: 100%;
+
     /* float: right; */
     top: 30pt;
     padding:50px;
@@ -394,7 +380,7 @@ section img {
 
 
 
-.max {
+/* .max {
     border: groove;
     border-color: sienna;
     margin-bottom: 50px;
@@ -407,10 +393,12 @@ section img {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
-    grid-gap: 5%;
-    /* border-style: solid;
+    grid-gap: 5%; */
+
+/* border-style: solid;
     border-color: darkgoldenrod; */
-}
+
+/* } */
 
 /* 
 #imgsDiv {
@@ -429,7 +417,7 @@ section img {
     vertical-align: middle;
   } */
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
@@ -437,10 +425,12 @@ section img {
     width: 100%;
     /* border-style: solid;
     border-color: darkgoldenrod; */
-    /* margin: 0;
+
+/* margin: 0;
     padding: 0;
     text-align: justify; */
-}
+
+/* }
 
 .placeholder {
     position: absolute;
@@ -452,15 +442,20 @@ main div ul {
     margin: 0;
     padding: 0;
     /* position: absolute; */
-    right: 0%;
-    top: 10%;
-}
 
-main div ul li {
-    padding: 10%;
-}
+/* right: 0%;
+    top: 10%; */
 
-.like {
+/* } */
+
+/* main div ul li {
+    padding: 10%; */
+
+*/
+/* } */
+
+*/
+/* .like {
     position: absolute;
     bottom: 0%;
     left: 35%;
@@ -474,9 +469,9 @@ main div ul li {
     left: 38%;
     margin: 0%;
     padding: 0%;
-}
+/* } */
 
-.like:hover {
+/* .like:hover {
     transform: scale(1.9);
     background-color: dodgerblue;
 }
@@ -488,8 +483,9 @@ main div ul li {
 
 .placeholder:hover {
     transform: scale(1.2);
-}
+} */
 
+*/
 /* register css by suhaib */
 
 #fff {
@@ -557,6 +553,7 @@ main div ul li {
     grid-gap: 5%;
     width: 100%;
 }
+
 #form {
     margin-left: 10%;
     margin-top: 5%;
@@ -582,13 +579,13 @@ fieldset {
     background-color: darkgrey;
     color: whitesmoke;
 }
+
 #ulinput {
     margin: 0;
     padding: 0;
     position: absolute;
     right: 30%;
     top: 60%;
-
 }
 
 #ulinput li {
@@ -597,15 +594,10 @@ fieldset {
 
 
 
-
 * {
     box-sizing: border-box
 }
 
-/* #grand{ */
-/* float: left; */
-
-/* } */
 
 
 /*Slideshow*/
@@ -620,10 +612,7 @@ fieldset {
 
 }
 
-img {
-    /* box-shadow: 20px 20px gray; */
-    vertical-align: middle;    
-}
+
 
 /* Slideshow container */
 
@@ -632,7 +621,7 @@ img {
 
     max-width: 1000px;
     position: relative;
-    margin: auto;    
+    margin: auto;
 }
 
 /* Next & previous buttons */
@@ -738,6 +727,100 @@ img {
         font-size: 11px
     }
 }
+
+
+/* product page by odai sadaqa */
+
+#grand {
+    box-sizing: border-box;
+    /* display: inline; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#grand div li {
+    box-sizing: border-box;
+    border: solid 1px #30475E;
+    /* box-shadow: 200px lightgray; */
+    box-shadow: 2px 2px #888888;
+    /* box: shadow 3px lightgray ; */
+    /* border-style: ridge; */
+    /* padding: 20px; */
+    margin: 10px;
+    width: 225pt;
+    height: 400pt;
+    position: relative;
+    /* display: inline-block; */
+}
+
+#grand div li img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    /* padding: 20px; */
+}
+
+#grand div li img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    opacity: 0.6;
+}
+
+#grand div button {
+    font-family: monospace;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 15px;
+    /* display: block;
+    margin:0 auto; */
+    color: rgba(198, 206, 165, 0.856);
+    background-color: #30475E;
+    ;
+    position: absolute;
+    bottom: 10px;
+    right: 65px;
+    transition: 1s;
+}
+
+#grand div button:hover {
+    text-indent: -10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+
+#grand div li label {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 7px;
+    color: black;
+    /* display: inline; */
+    display: grid;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-style: italic; */
+    /* text-align: justify; */
+    /* background-color: blue; */
+    transition: 1s;
+}
+
+#grand div li label:hover {
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+
+/* End product page by odai Sadaqa */
 
 #card1
 {
@@ -846,3 +929,4 @@ img {
     border-radius: 24px;
     border:2px solid #30475E;
 }
+
