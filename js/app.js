@@ -1,4 +1,5 @@
 "use strict";
+
 // First Constructor 
 const SelectedItem = function (id, name, filePath) {
     this.id = id;
@@ -10,6 +11,7 @@ SelectedItem.all = [];
 const saveToLocalStorage = function () {
     localStorage.setItem('selectedItem', JSON.stringify(SelectedItem.all));
 };
+
 //Second Constructor
 const Product = function (name, filePath, address, price, rooms, contactus, like, dislike, bought) {
     this.name = name;
@@ -25,6 +27,7 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     savingAllItems()
 }
 Product.all = [];
+
 function savingAllItems() {
     let stringedArr = JSON.stringify(Product.all)
     localStorage.setItem('allProducts', stringedArr)
@@ -62,11 +65,15 @@ function clickPicture(event) {
     let item = new SelectedItem(chooseIndex, name, filePath);
     let buyBtn = document.getElementById('buyButton');
     buyBtn.id = chooseIndex;
+
     saveToLocalStorage();
     //render features
     renderFeatures(chooseIndex);
 }
+
+
 prepareLinks();
+
 function renderFeatures(id) {
     if (window.location.pathname == '/index.html') {
         let chosenImg = document.getElementById('selectedItem');
@@ -88,4 +95,6 @@ function goToregister() {
     // buyBtn.addEventListener('click', goToregister(event));
     document.location.href = "register.html";
 }
+
+
 renderFeatures(0);//to render the features section om=n page load
