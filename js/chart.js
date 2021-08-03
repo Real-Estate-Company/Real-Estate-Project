@@ -1,100 +1,23 @@
 'use strict';
 
-// let likeArr = [];
-// let dislikeArr = [];
+//Declarations
 let boughtArrr = [];
 let namesArrr = [];
-
-// this is suhaib's part of coding up to line '248'.
-// suhaib's function for saving
-
-// function updateStorage() {
-
-
-//   let stringArr = JSON.stringify(Product.all);
-//   localStorage.setItem('product', stringArr);
-
-
-// }
-
-// updateStorage();
-
-
-// savingAllItems();
-// funtion to store all objects again in LS
-
-
-// let Productbutton = document.getElementById('selectionBar');
-
-
-// usertButton.addEventListener("click", chooseUser() {
-//     let options = usertButton.querySelectorAll("option");
-//     let count = options.length;
-//     if(typeof(count) === "undefined" || count < 2)
-//     {
-//       headerRow();
-//     }
-// });
-
-// usertButton.addEventListener("change", chooseUser() {
-//     if(usertButton.value == "addNew")
-//     {
-//         addActivityItem();
-//     }
-// });
-
-
-// }
-
-
-// var x = document.getElementById("selectionBar").selectedIndex;
-//   alert(document.getElementsByTagName("option")[x].value);
-
-// standing alone functios...
-
-
-// let parent = document.getElementById('tbody');
+//Product Data
 let data = localStorage.getItem('allProducts');
 let parcedArray = JSON.parse(data);
-console.log(data);
+// User Data
+let userdata = localStorage.getItem('user');
+let userDataArr = JSON.parse(userdata);
+let originalData = parcedArray;//to revert the whole table
 
+//Product Table
+function productTableDraw() {
+  let productTable = document.getElementById('controlTable');
+  productTable.textContent = '';
 
-// document.getElementsByTagName("option")[Productbutton].value;
-// let Productbutton = document.getElementById('selectionBar');
-
-// Productbutton.addEventListener('change', headerRow);
-
-
-
-// let ProductButton = document.getElementById('selectionBar');
-// ProductButton.addEventListener('input', headerRow);
-
-function headerRow() {
-  let tableProductDiv = document.getElementById('controlTable');
-   let productTable = document.createElement('table');
-   tableProductDiv.appendChild(productTable);
-  // let select=ev.target;
-  
   let tableBody = document.createElement('tbody')
   productTable.appendChild(tableBody);
-  
-  // let headingRow = document.createElement('tr');
-  // table.appendChild(headingRow);
-  // let emptyCell = document.createElement('th');
-  // headingRow.appendChild(emptyCell);
-  // emptyCell.textContent = 'User Name';
-
-  // let paraRow=document.createElement('tr');
-  // headingRow.appendChild(paraRow);
-  // let thPara=document.createElement('th');
-  // paraRow.appendChild(thPara);
-  // thPara.textContent=Product.all[i];
-
-  // for(let w=0;w<Product.all.length;w++){
-  //   let thPara=document.createElement('th');
-  //   headingRow.appendChild(thPara);
-  //   thPara.textContent=Product[w];
-  // }
 
   let tr = document.createElement('tr')
   tableBody.appendChild(tr);
@@ -142,12 +65,12 @@ function headerRow() {
   tr.appendChild(thElement11);
   thElement11.textContent = 'Remove button';
 
-
   for (let i = 0; i < parcedArray.length; i++) {
 
     let trElement = document.createElement('tr')
     tableBody.appendChild(trElement);
-    trElement.textContent = '.';
+    trElement.textContent = i;
+    trElement.style.textAlign = "center";
 
     let firstTd = document.createElement('td');
     trElement.appendChild(firstTd);
@@ -185,9 +108,6 @@ function headerRow() {
     trElement.appendChild(ninthTd);
     ninthTd.textContent = parcedArray[i].bought;
 
-
-    // let tr = document.createElement('tr');
-    //     tbody.appendChild(tr);
     let tdDelete = document.createElement('td');
     trElement.appendChild(tdDelete);
 
@@ -195,164 +115,141 @@ function headerRow() {
     deletebtn.textContent = 'X';
     deletebtn.id = i;
     tdDelete.appendChild(deletebtn);
-    // let tdQuantity = document.createElement('td');
-    // trElement.appendChild(tdQuantity);
-    // tdQuantity.textContent = parcedArray[i].quantity;
-    // let tdItem = document.createElement('td');
-    // trElement.appendChild(tdItem);
-    // tdItem.textContent = parcedArray[i].product;
     deletebtn.addEventListener('click', removeItemFromCart);
 
     namesArrr.push(parcedArray[i].name);
   }
-  // productTable.textContent = "";
-  // userTable.textContent="";
-  
-  // ProductButton.removeEventListener('change', headerRow);
 }
 
-// headerRow()
-
-function renderCart() {
-  clearCart();
-  productsVotes();
-  
-  
-
-}
-
-function clearCart() {
-  // productTable.textContent = "";
-  // userTable.textContent="";
-  
-  
-}
-
+//Delete product from table and local storage.
 function removeItemFromCart(event) {
+  event.preventDefault();
   if (event.target.id !== null) {
     parcedArray.splice(event.target.id, 1);
     localStorage.clear();
-    let cartARR = JSON.stringify(parcedArray);
-    localStorage.setItem('allProducts', cartARR);
-    renderCart();
+    let deletedArr = JSON.stringify(parcedArray);
+    localStorage.setItem('allProducts', deletedArr);
+    productsToArr();
   }
-
 }
 
-renderCart();
+productsToArr();
 
-
-
-
-
-
-function productsVotes() {
+//Get data from local storage to array
+function productsToArr() {
   let data = localStorage.getItem('allProducts');
   let parsedArr = JSON.parse(data);
-
-
-
-
-
   if (parsedArr !== null) {
-
-
-    // parcedArray = [];
-
     parcedArray = parsedArr;
-    // for (let i = 0; i < parsedArr.length; i++) {
-    //   let newProduct = new Product(parsedArr[i].name, parsedArr[i].filePath, parsedArr[i].address, parsedArr[i].price, parsedArr[i].rooms, parsedArr[i].contactus, parsedArr[i].like, parsedArr[i].dislike, parsedArr[i].bought);
-    //   // newProduct.name = parsedArr[i].name;
-
-    //   newProduct.like = parsedArr[i].like;
-    //   newProduct.dislike = parsedArr[i].dislike;
-    //   newProduct.bought = parsedArr[i].bought;
-    // namesArr.push(parsedArr.);
-    //   likeArr.push(parsedArr[i].like);
-    //   dislikeArr.push(parsedArr[i].dislike);
-    //   boughtArr.push(parsedArr[i].bought)
-    //   // console.log(likeArr);
-    //   console.log(newProduct)
-
-    // }
-
+    productTableDraw();
   }
-
-
-
 }
 
-
-
-function SelectRedirect() {
-  switch (document.getElementById('selectionBar').value) {
-    case "Product":
-      headerRow();
-      break;
-    case "User":
-      chooseUser();
-      break;
-    
+//Select Element
+let ddlFilterElement = document.getElementById('ddlFilter');
+ddlFilterElement.addEventListener('change', selectRedirect);
+function selectRedirect(event) {
+  event.preventDefault();
+  if (event.target.value == "User") {
+    chooseUser();
   }
-
+  else if (event.target.value == "Product") {
+    productTableDraw();
+  }
 }
-SelectRedirect();
 
-
-
-let User = [];
-// function getValue(){
-
-// let usertButton = document.getElementById('selectionBar').value;
-// usertButton.addEventListener('input', chooseUser);
-
-
-// getValue();
-
-// let usertButton = document.getElementById('selectionBar');
-// usertButton.addEventListener('change', chooseUser);
-
+//User Table    
+//Get User data from local storage to array
+function UserToArr() {
+  let userdata = localStorage.getItem('user');
+  let userparsedArr = JSON.parse(userdata);
+  if (userparsedArr !== null) {
+    userDataArr = userparsedArr;
+    chooseUser();
+  }
+}
 function chooseUser() {
-  // userTable
-  // let select =ev.target;
-  let tableUserDiv = document.getElementById('controlTable');
-  let userTable = document.createElement('table');
-  tableUserDiv.appendChild(userTable);
+  let userTable = document.getElementById('controlTable');
+  userTable.textContent = '';
 
-  let header = document.createElement('tr');
-  userTable.appendChild(header);
+  let tableBody = document.createElement('tbody')
+  userTable.appendChild(tableBody);
+
+  let tr = document.createElement('tr')
+  tableBody.appendChild(tr);
+
+  let thElement = document.createElement('th');
+  tr.appendChild(thElement);
 
   let userNameTh = document.createElement('th');
-  header.appendChild(userNameTh);
-  userNameTh.textContent = 'user Name';
-
-  let userNameInfo = document.createElement('td');
-  userNameTh.appendChild(userNameInfo);
-  userNameInfo.textContent = 'Suhaib';
-
-  let EmailTh = document.createElement('th');
-  header.appendChild(EmailTh);
-  EmailTh.textContent = 'Email';
-
-  let userEmailInfo = document.createElement('td');
-  EmailTh.appendChild(userEmailInfo);
-  userEmailInfo.textContent = 'Suhaib@gmail.com';
+  tr.appendChild(userNameTh);
+  userNameTh.textContent = 'User Name';
 
   let phoneNumberlTh = document.createElement('th');
-  header.appendChild(phoneNumberlTh);
+  tr.appendChild(phoneNumberlTh);
   phoneNumberlTh.textContent = 'phoneNumber';
 
-  let phoneNumberInfo = document.createElement('td');
-  phoneNumberlTh.appendChild(phoneNumberInfo);
-  phoneNumberInfo.textContent = 'o77788889';
+  let EmailTh = document.createElement('th');
+  tr.appendChild(EmailTh);
+  EmailTh.textContent = 'Email';
 
-  // usertButton.removeEventListener('change', chooseUser);
-  // productTable.textContent = "";
-  // userTable.textContent="";
-  
+  let productth = document.createElement('th');
+  tr.appendChild(productth);
+  productth.textContent = 'Real-Estate';
+
+  for (let i = 0; i < userDataArr.length; i++) {
+    let trElement = document.createElement('tr')
+    tableBody.appendChild(trElement);
+    trElement.textContent = i;
+    trElement.style.textAlign = "center";
+
+    let userNameInfo = document.createElement('td');
+    trElement.appendChild(userNameInfo);
+    userNameInfo.textContent = userDataArr[i].user_name;
+
+
+    let userEmailInfo = document.createElement('td');
+    trElement.appendChild(userEmailInfo);
+    userEmailInfo.textContent = userDataArr[i].Email;
+
+
+    let phoneNumberInfo = document.createElement('td');
+    trElement.appendChild(phoneNumberInfo);
+    phoneNumberInfo.textContent = userDataArr[i].phoneNumber;
+
+    let prodactName = document.createElement('td');
+    trElement.appendChild(prodactName);
+    let productIdbuy = userDataArr[i].productid;
+    let productname = parcedArray[productIdbuy].name;
+    prodactName.textContent = productname;
+  }
+}
+
+//Revert all Data
+let revertbtnElement = document.getElementById('revertbtn');
+revertbtnElement.addEventListener('click', revertData);
+function revertData() {
+  parcedArray = originalData;
+  let allDataArr = JSON.stringify(parcedArray);
+  localStorage.setItem('allProducts', allDataArr);
+  productsToArr();
 }
 
 
+// boughtArrr = []
+
+function extractBought() {
+  for (let i = 0; i < userDataArr.length; i++) {
+    let index = userDataArr[i].productid;
+    let productname = parsedArr[index].name;
+    boughtArrr.push(productname);
+  }
+}
+
+
+//Chart is not working
+
+// /Chart
 function showChart() {
   const data = {
     labels: namesArrr,
@@ -399,14 +296,5 @@ function showChart() {
   );
 }
 showChart();
-
-
-productsVotes();
-
-
-
-
-
-
 
 
