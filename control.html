@@ -14,20 +14,17 @@
 <body>
     <header>
         <nav>
-            <img src="assets/Logo.png">
+            <img src="assets/Logo.png" onclick="location.href ='/index.html'">
             <h1>REAL ESTATE COMPANY</h1>
             <ul>
-                <!-- <li>
-                    <a href="#">Real-Estates</a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li> -->
                 <li>
                     <a href="aboutus.html">About Us</a>
                 </li>
                 <li>
-                    <a href="#">Real-Estates</a>
+                    <a href="products.html">Real-Estates</a>
+                </li>
+                <li>
+                    <a href="control.html">Control</a>
                 </li>
             </ul>
         </nav>
@@ -38,52 +35,23 @@
     <!-- onChange="SelectRedirect();" -->
     <Main>
         <div id="selection-bar">
-            <select  id='selectionBar' NAME="section" onChange="SelectRedirect();"> 
-                <option value="menu">menu</option>
-                <option  value="Product">product</option>
+            <select  id='ddlFilter' NAME="section" > 
+                <!-- <option value="menu">menu</option> -->
+                <option value="Product" selected>product</option>
                 <option value="User">User</option>
             </select>
         </div>
         
-
-        <div id='controlTable'>
-            <!-- <table id='table'> 
-                <thead> -->
-                    <!-- <tr>
-                      <th>User Name</th>
-                      <th>Property</th>
-                      <th>filePath</th>
-                      <th>address</th>
-                      <th>price</th>
-                      <th> rooms</th>
-                      <th>contactus</th>
-                      <th>like</th>
-                      <th>dislike</th>
-                      <th> bought</th>
-                      <th>Remove</th>
-                      
-                    </tr> -->
-                  <!-- </thead>
-                  <tbody id="tbody"></tbody>
-                  <tfoot></tfoot>
-            </table> -->
-            
-
-            
-
-        </div>
+        
+        <table id='controlTable'>
+        </table>
         <div>
-            <button id="button">Retrieve Data</button>
+            <button id="revertbtn">Revert Data</button>
             <canvas id='myChart'></canvas>
-
-
         </div>
     </Main>
 
-    <footer id="foot"></footer>
-    <!-- <div>
-        <canvas id="myChart"></canvas>
-      </div> -->
+    <footer id="foot"></footer>    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <SCript src="js/app.js"></SCript> -->
 

@@ -7,6 +7,7 @@ const SelectedItem = function (id, name, filePath) {
     this.name = name;
     this.filePath = filePath;
     SelectedItem.all.push(this);
+    saveToLocalStorage();
 }
 SelectedItem.all = [];
 const saveToLocalStorage = function () {
@@ -25,13 +26,15 @@ const Product = function (name, filePath, address, price, rooms, contactus, like
     this.dislike = dislike;
     this.bought = bought;
     Product.all.push(this);
-    savingAllItems()
+    savingAllItems();
 }
 Product.all = [];
 
 function savingAllItems() {
+    // if (localStorage.getItem('allProducts') === null) {
     let stringedArr = JSON.stringify(Product.all)
     localStorage.setItem('allProducts', stringedArr)
+    // }
 }
 //create 10 objects
 function generateObjects() {
@@ -47,62 +50,12 @@ function generateObjects() {
     new Product('Villa Myra', 'img/p10/img1.jpg', 'Jumeirah Village Circle', 'USD 450,000', '1 Bed,1 Bath,1 Parking', '600 33 2663', 0, 0, 0);
 }
 //call function 
+// if (localStorage.getItem('allProducts') === null) {
 generateObjects();
-//Slidshow
-//add links to images
-function prepareLinks() {
-
-    if (window.location.pathname == '/index.html') {
-        for (let i = 0; i < Product.all.length; i++) {
-            let selectedImg = document.getElementById(i);
-            selectedImg.addEventListener('click', clickPicture);
-        }
-    }
-}
-function clickPicture(event) {
-    let chooseIndex = event.target.id;
-    let name = Product.all[chooseIndex].name;
-    let filePath = Product.all[chooseIndex].filePath;
-    SelectedItem.all = [];
-    let item = new SelectedItem(chooseIndex, name, filePath);
-    let buyBtn = document.getElementById('buyButton');
-    buyBtn.id = chooseIndex;
-
-    saveToLocalStorage();
-    //render features
-    renderFeatures(chooseIndex);
-}
+// }
 
 
-prepareLinks();
-
-function renderFeatures(id) {
-    if (window.location.pathname == '/index.html') {
-        let chosenImg = document.getElementById('selectedItem');
-        chosenImg.src = Product.all[id].filePath;
-        let productName = document.getElementById('productName');
-        let price = document.getElementById('price');
-        let address = document.getElementById('address');
-        let phoneNo = document.getElementById('contactus');
-        let like = document.getElementById('like');
-        let buy = document.getElementById('bought');
-        productName.textContent = Product.all[id].name;
-        price.textContent = Product.all[id].price;
-        address.textContent = Product.all[id].address;
-        phoneNo.textContent = Product.all[id].contactus;
-        like.textContent = Product.all[id].like;
-    }
-}
-function goToregister() {
-    // buyBtn.addEventListener('click', goToregister(event));
-    document.location.href = "register.html";
-}
-
-
-// renderFeatures(0);//to render the features section om=n page load
-
-
-let grandDivElement = document.getElementById('mainSlider');
+let grandDivElementHome = document.getElementById('mainSlider');
 function renderProducts() {
     if (window.location.pathname == '/index.html') {
         let data = localStorage.getItem('allProducts');
@@ -112,7 +65,7 @@ function renderProducts() {
             let productDivElement = document.createElement('div');
             productDivElement.id = "imgDiv" + i;
             productDivElement.className = "mySlides fade";
-            grandDivElement.appendChild(productDivElement);
+            grandDivElementHome.appendChild(productDivElement);
 
             let productIMG = document.createElement('img');
             productIMG.id = i;
@@ -128,10 +81,11 @@ renderProducts();
 
 
 
+
 var slideIndex = 1;
 let slides = document.getElementsByClassName("mySlides");
-console.log(slides);
-showSlides(slideIndex);
+
+if (window.location.pathname == '/index.html') {showSlides(slideIndex);}
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -142,21 +96,64 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    if (window.location.pathname == '/index.html') {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+}
+//add links to images
+function prepareLinks() {
+
+    if (window.location.pathname == '/index.html') {
+        let data = localStorage.getItem('allProducts');
+        let parsedArr = JSON.parse(data);
+        for (let i = 0; i < parsedArr.length; i++) {
+            let selectedImg = document.getElementById(i);
+            selectedImg.addEventListener('mouseover', clickPicture);
+        }
     }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+}
+function clickPicture(event) {
+    let data = localStorage.getItem('allProducts');
+    let parsedArr = JSON.parse(data);
+    let chooseIndex = event.target.id;    
+    let name = parsedArr[chooseIndex].name;
+    let filePath = parsedArr[chooseIndex].filePath;
+    SelectedItem.all = [];
+    let item = new SelectedItem(chooseIndex, name, filePath);
+    renderFeatures(chooseIndex);
 }
 
+function renderFeatures(id) {
+    if (window.location.pathname == '/index.html') {
+        let data = localStorage.getItem('allProducts');
+        let parsedArr = JSON.parse(data);
 
-// prepareLinks();
-bindSlideShow();
+        let productName = document.getElementById('productName');
+        let price = document.getElementById('price');
+        let address = document.getElementById('address');
+        let phoneNo = document.getElementById('contactus');
+        let like = document.getElementById('like');
+        productName.textContent = "NAME : " + parsedArr[id].name;
+        price.textContent = "PRICE : " + parsedArr[id].price;
+        address.textContent = "ADDRESS " + parsedArr[id].address;
+        phoneNo.textContent = "PHONE NO. : " + parsedArr[id].contactus;
+    }
+}
+function goToregister() {
+    document.location.href = "register.html";
+}
+
+prepareLinks();
+renderFeatures(0);//to render the features section om=n page load

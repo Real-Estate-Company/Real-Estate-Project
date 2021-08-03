@@ -90,7 +90,7 @@ function User(productid, user_name, Email, phoneNumber,) {
     User.all.push(this);
     SaveUserInfo();
 }
-User.all = [];
+User.all = JSON.parse(localStorage.getItem('user')) || [];
 
 
 let form = document.getElementById('form');
