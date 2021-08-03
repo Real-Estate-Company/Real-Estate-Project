@@ -6,40 +6,91 @@
 
 /*All body style*/
 
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Hammersmith+One&display=swap%27');
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #E7DEC8
+    
 }
 
-header {
-    background: seashell;
-    height: 125px;
-    margin-bottom: 30px;
-}
 
-nav {
-    width: 960px;
-    margin: 0px auto;
-}
 
-nav img {
-    /* margin-top: 10px; */
-    margin-right: 30px;
-    float: left;
-    width: 100pt;
-    height: 100pt;
-}
-
-nav li {
-    /* display: inline-block; */
-    margin-top: 6%;
-    margin-right: 3%;
-    float: right;
-}
-
-a {
-    color: maroon;
+header {  padding: 200px;
+    background-color: #30475E;
+    height:50px;
+    margin-bottom: 50px;
     text-decoration: none;
+    color: black;
 }
+nav img {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 500px;
+    bottom: 370px;
+}
+    
+
+nav ul  li { 
+   
+    display: inline-block;
+    font-size: larger;
+    position: relative;
+    left: 150px;
+    top: 100px;
+    text-align: center;
+    padding: 20px 20px 20px 50px;
+    bottom: revert;
+
+
+}
+nav  ul li a{ 
+
+    font-family: Arial, Helvetica, sans-serif;
+    color:#E7DEC8;
+    font-family: 'Hammersmith One', sans-serif;
+    text-decoration: none;
+
+
+
+
+
+footer {  padding: 2%;
+    background-color:#30475E;
+    top: 250px;
+    left: 400px;
+    text-align: center;
+    color:#E7DEC8 ;
+    height:6%;
+    font-size: x-large;
+}
+footer img{
+    height: 100px;
+}
+
+/* nav li a:hover{
+
+
+ background-color: rgb(148, 111, 19);
+
+    border-radius: 100%;
+    color: black;
+
+} */
+/* 
+
+a{
+    position:relative;
+    top: 220px;
+    color:black;
+
+    text-decoration: none;
+    text-align: center;
+    padding:50px;
+}
+
 
 h1 {
     font-family: 'Abril Fatface', cursive;
@@ -49,6 +100,7 @@ h1 {
     float: left;
     color: maroon;
 }
+ */
 
 main {
     width: 960px;
@@ -59,7 +111,6 @@ main ul {
     margin: 30px auto;
     padding: 0px;
 }
-
 
 #HeaderImg {
     width: 960px;
@@ -83,15 +134,48 @@ section img {
 }
 
 /* Text and Button */
+
 /* featuesSection */
-#featuesSection div {
-    width: 50%;
+
+
+
+ #featuesSection{
+    background-image :url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJUl8t6a15BEB21IF61TuO93A_wt4aA3DKg&usqp=CAU");
+
+
+    background-repeat:round
+ 
+    /* opacity:0.5; */
+ }
+   
+#featuesSection{
+    border: 3px solid;
+    height: 400px;
+    width: 100%;
+
     /* float: right; */
-    padding-left: 30px;
+    top: 30pt;
+    padding:50px;
     margin-bottom: 30px;
+    text-align: center;
+    /* padding: 20px 30px 10px 10px ; */
+    
+} 
+#featuesSection div p { 
+
+    height: 20pt;
+/* top: 120pt; */
+
+/* top: 50px; */
+    background-color:#E7DEC8;
+    padding: 10px 10px 10px 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+   
+    
 }
 
-#featuesSection h2 {
+
+/* #featuesSection h2 {
     font-size: 18px;
     margin-bottom: 10px;
     font-family: 'Open Sans', sans-serif;
@@ -99,13 +183,13 @@ section img {
 
 #featuresP ul li {
     /* position: inherit; */
-    font-family: 'Open Sans', sans-serif;
-    height: 250px;
-    color: dimgray;
+    /* font-family: 'Open Sans', sans-serif; */
+    /* height: 250px;
+    color: dimgray; */
     /* overflow: scroll; */
     /* font-style: italic; */
-    margin-bottom: 10px;
-}
+    /* margin-bottom: 10px; */
+/* } */
 
 /* button */
 
@@ -124,7 +208,6 @@ section img {
     background: salmon;
 }
 
-/* selection bar by odi sadaqa in control html */
 
 #selection-bar {
     margin: 20px;
@@ -143,31 +226,7 @@ section img {
     font-size: 20px;
 }
 
-/* finished selection bar */
 
-/* table css in control html by odai sadaqa */
-
-table {
-    border: 1px solid black;
-    width: 90%;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    margin: 30px;
-    height: 200px;
-    background-color: cyan;
-}
-
-th, td {
-    border: 1px solid black;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    font-weight: bold;
-}
-
-/* finished table css*/
-
-/* chart css odai sadaqa */
 
 #myChart {
     /* padding:5px; */
@@ -177,7 +236,7 @@ th, td {
 
 /* end chart css */
 
-/* Aboutus.html  by odai sadaqa*/
+
 
 #Aboutus #first {
     float: left;
@@ -315,16 +374,13 @@ th, td {
     margin: 20px;
 }
 
-/* finished About us. html  by odai sadaqa*/
-
-/* Footer */
 
 
-/* suhaib's code  */
 
-/* suhaib's code for products  */
 
-.max {
+
+
+/* .max {
     border: groove;
     border-color: sienna;
     margin-bottom: 50px;
@@ -337,10 +393,12 @@ th, td {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
-    grid-gap: 5%;
-    /* border-style: solid;
+    grid-gap: 5%; */
+
+/* border-style: solid;
     border-color: darkgoldenrod; */
-}
+
+/* } */
 
 /* 
 #imgsDiv {
@@ -359,7 +417,7 @@ th, td {
     vertical-align: middle;
   } */
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
@@ -367,10 +425,12 @@ th, td {
     width: 100%;
     /* border-style: solid;
     border-color: darkgoldenrod; */
-    /* margin: 0;
+
+/* margin: 0;
     padding: 0;
     text-align: justify; */
-}
+
+/* }
 
 .placeholder {
     position: absolute;
@@ -382,15 +442,20 @@ main div ul {
     margin: 0;
     padding: 0;
     /* position: absolute; */
-    right: 0%;
-    top: 10%;
-}
 
-main div ul li {
-    padding: 10%;
-}
+/* right: 0%;
+    top: 10%; */
 
-.like {
+/* } */
+
+/* main div ul li {
+    padding: 10%; */
+
+*/
+/* } */
+
+*/
+/* .like {
     position: absolute;
     bottom: 0%;
     left: 35%;
@@ -404,9 +469,9 @@ main div ul li {
     left: 38%;
     margin: 0%;
     padding: 0%;
-}
+/* } */
 
-.like:hover {
+/* .like:hover {
     transform: scale(1.9);
     background-color: dodgerblue;
 }
@@ -418,8 +483,9 @@ main div ul li {
 
 .placeholder:hover {
     transform: scale(1.2);
-}
+} */
 
+*/
 /* register css by suhaib */
 
 
@@ -485,10 +551,12 @@ main div ul li {
 
 
 
+
 #fff {
     /* border: groove; */
     /* border-color: sienna; */
     margin-bottom: 50px;
+
     margin-top: 5%;
     /* position: relative; */
     /* float: left; */
@@ -579,13 +647,17 @@ fieldset {
     border: 3px solid #f1f1f1;
     text-align: center;
 }
+
 #ulinput {
     margin: 0;
     padding: 0;
+
     /* position: absolute; */
     left: 40pt;
   
 
+
+   
 }
 
  #ulinput li {
@@ -596,22 +668,10 @@ fieldset {
 
 
 
-/* Footer */
-
-footer {
-    clear: both;
-    height: 150px;
-    background: seashell;
-}
-
 * {
     box-sizing: border-box
 }
 
-#grand{
-/* float: left; */
-
-}
 
 
 /*Slideshow*/
@@ -623,18 +683,19 @@ footer {
 
 .mySlides {
     display: none
+
 }
 
-img {
-    vertical-align: middle;    
-}
+
 
 /* Slideshow container */
 
 .slideshow-container {
+    box-shadow: 5px 5px 5px 5px   #999693;
+
     max-width: 1000px;
     position: relative;
-    margin: auto;    
+    margin: auto;
 }
 
 /* Next & previous buttons */
@@ -740,3 +801,206 @@ img {
         font-size: 11px
     }
 }
+
+
+/* product page by odai sadaqa */
+
+#grand {
+    box-sizing: border-box;
+    /* display: inline; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#grand div li {
+    box-sizing: border-box;
+    border: solid 1px #30475E;
+    /* box-shadow: 200px lightgray; */
+    box-shadow: 2px 2px #888888;
+    /* box: shadow 3px lightgray ; */
+    /* border-style: ridge; */
+    /* padding: 20px; */
+    margin: 10px;
+    width: 225pt;
+    height: 400pt;
+    position: relative;
+    /* display: inline-block; */
+}
+
+#grand div li img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    /* padding: 20px; */
+}
+
+#grand div li img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    opacity: 0.6;
+}
+
+#grand div button {
+    font-family: monospace;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 15px;
+    /* display: block;
+    margin:0 auto; */
+    color: rgba(198, 206, 165, 0.856);
+    background-color: #30475E;
+    ;
+    position: absolute;
+    bottom: 10px;
+    right: 65px;
+    transition: 1s;
+}
+
+#grand div button:hover {
+    text-indent: -10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+
+#grand div li label {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 7px;
+    color: black;
+    /* display: inline; */
+    display: grid;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-style: italic; */
+    /* text-align: justify; */
+    /* background-color: blue; */
+    transition: 1s;
+}
+
+#grand div li label:hover {
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+
+/* End product page by odai Sadaqa */
+
+#card1
+{
+    background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
+    background-size: 350px 230px;
+    width:350px;
+    height:230px;
+    border:1px solid #30475E;
+    position: relative;
+    bottom: 17pt;
+    left: 80pt;
+    border-radius: 24px;
+
+}
+#card2
+{
+    background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
+    background-size: 350px 230px;
+    width:350px;
+    height:230px;
+    border:1px solid;
+    margin-left: 40%;
+    position: relative;
+    bottom: 190pt;
+    left: 120pt;
+    border-radius: 24px;
+}
+#card3
+{
+    background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
+    background-size: 350px 230px;
+    width:350px;
+    height:230px;
+    border:1px solid;
+    position: relative;
+    bottom: 200px;
+    left: 80pt;
+    border-radius: 24px;
+}
+#card4
+{
+    background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
+    background-size: 350px 230px;
+    width:350px;
+    height:230px;
+    border:1px solid;
+    position: relative;
+    margin-left: 40%;
+    bottom: 430px;
+    left: 120pt;
+    border-radius: 24px;
+}
+#card5
+{
+    background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
+    background-size: 350px 230px;
+    width:350px;
+    height:230px;
+    border:1px solid;
+    position: relative;
+    margin-left: 40%;
+    bottom: 290pt;
+    left: 120pt;
+    border-radius: 24px;
+}
+#card6
+{
+    background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
+    background-size: 350px 230px;
+    width:350px;
+    height:230px;
+    border:1px solid;
+    position: relative;
+    bottom: 461pt;
+    left: 80pt;
+    border-radius: 24px;
+}
+#info
+{
+    position: relative;
+    left: 20px;
+}
+#name
+{
+    font-weight: bolder; 
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#email
+{
+    color:#30475E;
+}
+#full
+{
+    position: static;
+    color: #30475E;
+}
+#profile
+{
+    height:130px; 
+    width:110px;
+    float: right;
+    position: relative;
+    right: 20pt;
+    bottom: 40pt;
+    border-radius: 24px;
+    border:2px solid #30475E;
+}
+
