@@ -71,7 +71,7 @@ function renderProducts() {
 
             let productIMG = document.createElement('img');
             productIMG.id = i;
-            productIMG.src = "img/p" + imgNumber + "/img1.jpg";
+            productIMG.src = "./img/p" + imgNumber + "/img1.jpg";
             productIMG.style.width = "100%";
             productDivElement.appendChild(productIMG);
         }
