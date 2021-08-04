@@ -1,6 +1,6 @@
 "use strict"
 //array of bought
-let arrBought=[];
+let arrBought = [];
 //global
 let newItems;
 //array to store the content of 'parseItem' on it
@@ -12,7 +12,7 @@ let index;
 
 //make function getItems 
 let fixedarr = Product.all;
-console.log(fixedarr);
+
 
 function saveProductdat() {
     localStorage.setItem('allProducts', JSON.stringify(fixedarr));
@@ -23,9 +23,9 @@ let arrayOfproduct = [];
 function getItems() {
     let parseItemProduct = JSON.parse(localStorage.getItem('allProducts')) || [];
     arrayOfproduct = parseItemProduct;
-    console.log('arrayOfproduct:', arrayOfproduct);
-    saveProductdat();
     
+    saveProductdat();
+
 
 }
 getItems();
@@ -35,13 +35,13 @@ getItems();
 function loadInfo() {
     const parseItem = JSON.parse(localStorage.getItem('selectedItem')) || [];
     newItems = new SelectedItem(parseItem);
-    console.log(parseItem);
+    
 
 
     arrayOfitem = parseItem;
-    console.log('arrayOfitem:', arrayOfitem);
+    
     index = arrayOfitem[0].id;
-    console.log('index:', index);
+   
 
 }
 
@@ -86,8 +86,8 @@ function User(productid, user_name, Email, phoneNumber,) {
     this.user_name = user_name;
     this.Email = Email;
     this.phoneNumber = phoneNumber;
-  
-    
+
+
     User.all.push(this);
     SaveUserInfo();
 }
@@ -105,41 +105,37 @@ function submitInfo(event) {
     let number = parseInt(event.target.numberFiled.value);
 
     let enterInfo = new User(index, userName, email, number);
-
-    if (Product.all[index].name === arrayOfitem[0].name) {
+    
+    if (index == arrayOfitem[0].id){
 
         Product.all[index].bought++;
 
         for (let i = 0; i < Product.all.length; i++) {
-    
+
             arrBought.push(Product.all[i].bought);
-            console.log('arrBought',arrBought);
+            
         }
         //set local storage to null
+    }
+    console.log(Product.all);
 
-        
-       
+    saveProductdat();
+    swal("Good job!", "Thank you for buying House!", "success");
+    // alert('Thank you for buying House');
+    localStorage.removeItem('selectedItem');
 
-  }
-
-
-  
-  saveProductdat();
-  alert('Thank you for buying House');
-  localStorage.removeItem('selectedItem');
- 
-    console.log('user info',arrayOfitem );
+    console.log('user info', arrayOfitem);
     // console.log('arrayOfproduct:', arrayOfproduct[index].name);
     console.log('arrayofselectedItem', arrayOfitem[0].name);
 
-   function remove() {
-    let Divelement = document.getElementById('clear');
-    Divelement.textContent='';
-    // Divelement.parentNode.removeChild(Divelement);
-    return false;
-}
-remove();
-  
+    function remove() {
+        let Divelement = document.getElementById('clear');
+        Divelement.textContent = '';
+        // Divelement.parentNode.removeChild(Divelement);
+        return false;
+    }
+    remove();
+
 }
 
 
