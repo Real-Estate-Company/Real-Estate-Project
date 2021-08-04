@@ -163,10 +163,10 @@ function renderFeatures(id) {
         let address = document.getElementById('address');
         let phoneNo = document.getElementById('contactus');
         let like = document.getElementById('like');
-        productName.textContent = "NAME : " + parsedArr[id].name;
-        price.textContent = "PRICE : " + parsedArr[id].price;
-        address.textContent = "ADDRESS " + parsedArr[id].address;
-        phoneNo.textContent = "PHONE NO. : " + parsedArr[id].contactus;
+        productName.textContent = "Name : " + parsedArr[id].name;
+        price.textContent = "Price : " + parsedArr[id].price;
+        address.textContent = "Address :" + parsedArr[id].address;
+        phoneNo.textContent = "Phone No. : " + parsedArr[id].contactus;
     }
 }
 function goToregister() {
