@@ -1,6 +1,7 @@
 'use strict';
 
 //Declarations
+let imgArr=Product.all;
 let boughtArrr = [];
 let namesArrr = [];
 //Product Data
@@ -59,7 +60,7 @@ function productTableDraw() {
 
     let trElement = document.createElement('tr')
     tableBody.appendChild(trElement);
-    trElement.textContent = i;
+    trElement.textContent = i+1;
     trElement.style.textAlign = "center";
 
     let firstTd = document.createElement('td');
@@ -68,7 +69,10 @@ function productTableDraw() {
 
     let secondTd = document.createElement('td');
     trElement.appendChild(secondTd);
-    secondTd.textContent = parcedArray[i].filePath;
+    let Pic=document.createElement('img')
+    secondTd.appendChild(Pic);
+    Pic.src = imgArr[i].filePath;
+    // secondTd.textContent = parcedArray[i].filePath;
 
     let thirdTd = document.createElement('td');
     trElement.appendChild(thirdTd);
@@ -258,7 +262,7 @@ console.log(namesArrr);
 function showChart() {
   for (let i = 0; i < Product.all.length; i++) {
     namesArrr.push(Product.all[i].name);
-    boughtArr.push(Product.all[i].bought);
+    boughtArrr.push(Product.all[i].bought);
   }
   const data = {
     labels: namesArrr,
