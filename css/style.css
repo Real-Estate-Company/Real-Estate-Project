@@ -616,8 +616,18 @@ input[type=text], input[type=email], input[type=number]:focus {
 }
 
 #full {
+    margin-top: 50pt;
     position: static;
     color: #30475E;
+}
+
+#aboutusP{
+    margin-bottom: 50pt;
+    display: block;
+    color: #30475E;
+    /* width: 400pt; */
+    text-align: center;
+    font-size: 15pt;
 }
 
 #profile {

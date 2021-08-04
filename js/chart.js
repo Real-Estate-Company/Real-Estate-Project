@@ -244,6 +244,8 @@ function extractBought() {
   }
 }
 
+// loop parsed 
+
 
 extractBought();
 // console.log(boughtArr.all);
@@ -256,6 +258,7 @@ console.log(namesArrr);
 function showChart() {
   for (let i = 0; i < Product.all.length; i++) {
     namesArrr.push(Product.all[i].name);
+    boughtArr.push(Product.all[i].bought);
   }
   const data = {
     labels: namesArrr,
