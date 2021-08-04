@@ -32,8 +32,9 @@ nav img {
     height: 300px;
     width: 300px;
     position: absolute;
-    left: 500px;
-    bottom: 370px;
+    left: 37%;
+    bottom: 59%;
+    margin-top: 10px;
 }
 
 nav ul li {
@@ -52,15 +53,14 @@ nav ul li a {
     color: #E7DEC8;
     font-family: 'Hammersmith One', sans-serif;
     text-decoration: none;
+    padding: 20px;
 }
-
 nav ul li a:hover {
-    border-radius: 50%;
     color: #30475E;
     background-color: #CBAF87;
     font-family: 'Hammersmith One', sans-serif;
     border: 20px black;
-    padding: 50px;
+    padding: 20px;
 }
 
 footer {
@@ -533,6 +533,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     border: 1px solid #30475E;
     position: relative;
     bottom: 17pt;
+    text-align: justify;
     left: 80pt;
     border-radius: 24px;
 }
@@ -547,6 +548,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     position: relative;
     bottom: 190pt;
     left: 120pt;
+    text-align: justify;
     border-radius: 24px;
 }
 
@@ -560,6 +562,8 @@ input[type=text], input[type=email], input[type=number]:focus {
     bottom: 200px;
     left: 80pt;
     border-radius: 24px;
+    text-align: justify;
+
 }
 
 #card4 {
@@ -571,6 +575,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     position: relative;
     margin-left: 40%;
     bottom: 430px;
+    text-align: justify;
     left: 120pt;
     border-radius: 24px;
 }
@@ -583,6 +588,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     border: 1px solid;
     position: relative;
     margin-left: 40%;
+    text-align: justify;
     bottom: 290pt;
     left: 120pt;
     border-radius: 24px;
@@ -597,6 +603,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     position: relative;
     bottom: 461pt;
     left: 80pt;
+    text-align: justify;
     border-radius: 24px;
 }
 
@@ -613,12 +620,13 @@ input[type=text], input[type=email], input[type=number]:focus {
 
 #email {
     color: #30475E;
+    text-decoration: none;
 }
 
 #full {
     margin-top: 50pt;
-    position: static;
     color: #30475E;
+    resize: both;
 }
 
 #aboutusP{
@@ -626,7 +634,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     display: block;
     color: #30475E;
     /* width: 400pt; */
-    text-align: center;
+    text-align: justify;
     font-size: 15pt;
 }
 
