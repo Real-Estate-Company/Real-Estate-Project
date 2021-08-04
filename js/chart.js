@@ -9,7 +9,9 @@ let parcedArray = JSON.parse(data);
 // User Data
 let userdata = localStorage.getItem('user');
 let userDataArr = JSON.parse(userdata);
-let originalData = parcedArray;//to revert the whole table
+// let originalData = parcedArray;//to revert the whole table
+let originalData = Product.all;//to revert the whole table
+console.log(Product.all);
 
 //Product Table
 function productTableDraw() {
@@ -93,7 +95,7 @@ function productTableDraw() {
     tdDelete.appendChild(deletebtn);
     deletebtn.addEventListener('click', removeItemFromCart);
 
-    namesArrr.push(parcedArray[i].name);
+
   }
 }
 
@@ -120,7 +122,7 @@ function productsToArr() {
     productTableDraw();
   }
 }
-
+showChart();
 
 //Select Element
 let ddlFilterElement = document.getElementById('ddlFilter');
@@ -128,15 +130,20 @@ ddlFilterElement.addEventListener('change', selectRedirect);
 function selectRedirect(event) {
   event.preventDefault();
   if (event.target.value == "User") {
+    console.log(event.target.value);
     chooseUser();
-    
-    
+    // let chart = document.getElementById('hideThis');
+    // $('canvaas').remove();
+    // chart.parentNode.removeChild(chart);
+    hideChart();
   }
   else if (event.target.value == "Product") {
     productTableDraw();
-    
-    
+    let chart = document.getElementById('myChart');
+    chart.style.display = "block";
+    // showChart();
   }
+
 }
 
 //User Table    
@@ -230,7 +237,7 @@ function extractBought() {
     let index = userDataArr[i].productid;
     let productname = parcedArray[index].name;
     let boughtItem = new boughtArr(index, productname, boughtArr.boughtNo++);
-    
+
 
     console.log(boughtItem);
     console.log(boughtArr.bought);
@@ -242,8 +249,14 @@ extractBought();
 // console.log(boughtArr.all);
 let buyLabel = boughtArr.all.boughtNo;
 
+
+
+console.log(namesArrr);
 //Chart is not working
 function showChart() {
+  for (let i = 0; i < Product.all.length; i++) {
+    namesArrr.push(Product.all[i].name);
+  }
   const data = {
     labels: namesArrr,
     datasets: [{
@@ -288,12 +301,14 @@ function showChart() {
     config
   );
 }
-
-
-
-
-
-
+function hideChart() {
+  let chart = document.getElementById('myChart');
+  chart.style.display = "none";
+  // var myChart = new Chart(
+  //   document.getElementById('myChart'),
+  //   myChart.remove()
+  // );
+}
 
 
 // This comment is for Haneen. Delete it once you finish reading.
@@ -301,20 +316,20 @@ function showChart() {
 // I have added a remove method instead of hiding the div (js.324), and it didn't show me the error that says:"I need to destroy the canvas first". Now when I use the new method first, it shows the chart, then it removes the chart once I click hide on the broswer,but when i try to show it again it gives me this message on console : "Failed to create chart: can't acquire context from the given item". So I think it can't show the chart again since we've already destroied it in side the if statement. 
 
 
-let addChart = document.getElementById('chartList');
-addChart.addEventListener('change', displayChart);
-function displayChart(event) {
-  event.preventDefault();
-  
-  if (event.target.value == "hide") {
-    let x=document.getElementById('myChart');
-    x.remove();
-    // document.getElementById("hideThis").style.visibility = "hidden";
-    
-  }else if (event.target.value == "show"){ 
-    showChart();        
-  }
-}
+// let addChart = document.getElementById('chartList');
+// addChart.addEventListener('change', displayChart);
+// function displayChart(event) {
+//   event.preventDefault();
+
+//   if (event.target.value == "hide") {
+//     let x=document.getElementById('myChart');
+//     x.remove();
+//     // document.getElementById("hideThis").style.visibility = "hidden";
+
+//   }else if (event.target.value == "show"){ 
+//     showChart();        
+//   }
+// }
 
 
 

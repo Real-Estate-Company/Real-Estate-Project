@@ -78,7 +78,7 @@ footer img {
     height: 100px;
 }
 
-main {
+main {    
     width: 960px;
     margin: 0px auto;
 }
@@ -162,6 +162,7 @@ section img {
 /* CONTROL PAGE */
 
 #selection-bar {
+    margin-top: 50px;
     margin-bottom: 50px;
     width: 200px;
     height: 40px;
@@ -248,7 +249,7 @@ th, td {
 
 #myChart {
     padding: 5px;
-    border: 1px solid #30475E;
+    /* border: 1px solid #30475E; */
     margin-left: 3.5%;
     margin-bottom: 10%;
 }
@@ -314,6 +315,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     margin: 0;
     padding: 0;
     left: 40pt;
+    color: #30475E;
 }
 
 #ulinput li {
