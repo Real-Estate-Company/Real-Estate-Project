@@ -59,7 +59,7 @@ if (localStorage.getItem('allProducts') == null) {
 let grandDivElementHome = document.getElementById('mainSlider');
 function renderProducts() {
 
-    if (window.location.pathname == '/index.html' || window.location.pathname == '/Real-Estate-Project/index.html') {
+    if (window.location.pathname == './index.html' || window.location.pathname == '/Real-Estate-Project/index.html') {
         let data = localStorage.getItem('allProducts');
         let parsedArr = JSON.parse(data);
         for (let i = 0; i < parsedArr.length; i++) {
@@ -84,7 +84,7 @@ renderProducts();
 var slideIndex = 1;
 let slides = document.getElementsByClassName("mySlides");
 
-if (window.location.pathname == '/index.html') { showSlides(slideIndex); }
+if (window.location.pathname == './index.html') { showSlides(slideIndex); }
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -113,7 +113,7 @@ function showDots() {
 
 
 function showSlides(n) {
-    if (window.location.pathname == '/index.html') {
+    if (window.location.pathname == './index.html') {
 
         var i;
         var slides = document.getElementsByClassName("mySlides");
@@ -134,7 +134,7 @@ function showSlides(n) {
 //add links to images
 function prepareLinks() {
 
-    if (window.location.pathname == '/index.html') {
+    if (window.location.pathname == './index.html') {
         let data = localStorage.getItem('allProducts');
         let parsedArr = JSON.parse(data);
         for (let i = 0; i < parsedArr.length; i++) {
@@ -155,7 +155,7 @@ function clickPicture(event) {
 }
 
 function renderFeatures(id) {
-    if (window.location.pathname == '/index.html') {
+    if (window.location.pathname == './index.html') {
         let data = localStorage.getItem('allProducts');
         let parsedArr = JSON.parse(data);
 
