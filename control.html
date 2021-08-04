@@ -14,12 +14,11 @@
 
 <body>
     <header>
-        <nav >
-            <img src="assets/gfdgf.png  "  location.href ='/index.html'>
-            <!-- <h1>REAL ESTATE COMPANY</h1> -->
+        <nav>
+            <img src="assets/gfdgf.png" location.href='index.html'>
             <ul>
                 <li>
-                    <a href="register.html">Register</a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li>
                     <a href="aboutus.html">About Us</a>
@@ -33,12 +32,9 @@
             </ul>
         </nav>
     </header>
-    <!-- onchange="headerRow()" -->
-    <!-- onChange="SelectRedirect();" -->
     <Main>
         <div id="selection-bar">
-            <select  id='ddlFilter' NAME="section" > 
-                <!-- <option value="menu">menu</option> -->
+            <select id='ddlFilter' NAME="section">
                 <option value="Product" selected>product</option>
                 <option value="User">User</option>
             </select>
@@ -46,24 +42,25 @@
         <table id='controlTable'>
         </table>
         <div><button id="revertbtn">Revert Data</button></div>
-        <div><select name="chartList" id="chartList">
+        <!-- <div><select name="chartList" id="chartList">
             <option value="hide" selected>Hide user chart</option>
             <option value="show" >Show user chart</option>
             
-        </select>>
+        </select>
         </div>
         <div id="hideThis">
             
             <canvas id='myChart'></canvas>
-        </div>
+        </div> -->
     </Main>
 
-    <footer id="foot"></footer>
-    <p> &copy;2021 Real-Estates</p>
-    <img src="assets/midia.png "   location.href ='/index.html'>    
+    <footer>
+        <p> &copy;2021 Real-Estates</p>
+        <img src="assets/midia.png " location.href='/index.html'>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <SCript src="js/app.js"></SCript> -->
     <script src="js/chart.js"></script>
-    
 </body>
+
 </html>

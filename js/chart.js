@@ -49,18 +49,6 @@ function productTableDraw() {
   tr.appendChild(thElement7);
   thElement7.textContent = 'Contact us';
 
-  let thElement8 = document.createElement('td');
-  tr.appendChild(thElement8);
-  thElement8.textContent = 'likes';
-
-  let thElement9 = document.createElement('td');
-  tr.appendChild(thElement9);
-  thElement9.textContent = 'dislikes';
-
-  let thElement10 = document.createElement('td');
-  tr.appendChild(thElement10);
-  thElement10.textContent = 'bought';
-
   let thElement11 = document.createElement('td');
   tr.appendChild(thElement11);
   thElement11.textContent = 'Remove button';
@@ -95,18 +83,6 @@ function productTableDraw() {
     let sixthTd = document.createElement('td');
     trElement.appendChild(sixthTd);
     sixthTd.textContent = parcedArray[i].contactus;
-
-    let seventhTd = document.createElement('td');
-    trElement.appendChild(seventhTd);
-    seventhTd.textContent = parcedArray[i].like;
-
-    let eighthTd = document.createElement('td');
-    trElement.appendChild(eighthTd);
-    eighthTd.textContent = parcedArray[i].dislike;
-
-    let ninthTd = document.createElement('td');
-    trElement.appendChild(ninthTd);
-    ninthTd.textContent = parcedArray[i].bought;
 
     let tdDelete = document.createElement('td');
     trElement.appendChild(tdDelete);
@@ -182,9 +158,6 @@ function chooseUser() {
 
   let tr = document.createElement('tr')
   tableBody.appendChild(tr);
-
-  let thElement = document.createElement('th');
-  tr.appendChild(thElement);
 
   let userNameTh = document.createElement('th');
   tr.appendChild(userNameTh);
@@ -339,9 +312,7 @@ function displayChart(event) {
     // document.getElementById("hideThis").style.visibility = "hidden";
     
   }else if (event.target.value == "show"){ 
-    showChart();
-    
-    
+    showChart();        
   }
 }
 

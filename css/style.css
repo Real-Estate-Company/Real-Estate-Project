@@ -4,25 +4,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Open+Sans:wght@600&display=swap');
 /*for the body font*/
 
-/*All body style*/
-
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Hammersmith+One&display=swap%27');
+/* HOME PAGE */
 
 body {
-
     background-color: #E7DEC8
-    
 }
 
+marquee {
+    height: 20pt;
+    color: #30475E;
+    font-size: x-large;
+    font-family: 'Roboto Slab', serif;
+}
 
-
-header {  padding: 200px;
+header {
+    padding: 200px;
     background-color: #30475E;
-    height:50px;
-    margin-bottom: 50px;
+    height: 50px;
+    /* margin-bottom: 50px; */
     text-decoration: none;
     color: black;
 }
+
 nav img {
     text-align: center;
     height: 300px;
@@ -31,10 +35,8 @@ nav img {
     left: 500px;
     bottom: 370px;
 }
-    
 
-nav ul  li { 
-   
+nav ul li {
     display: inline-block;
     font-size: larger;
     position: relative;
@@ -43,64 +45,38 @@ nav ul  li {
     text-align: center;
     padding: 20px 20px 20px 50px;
     bottom: revert;
-
-
 }
-nav  ul li a{ 
 
+nav ul li a {
     font-family: Arial, Helvetica, sans-serif;
-    color:#E7DEC8;
+    color: #E7DEC8;
     font-family: 'Hammersmith One', sans-serif;
     text-decoration: none;
+}
 
+nav ul li a:hover {
+    border-radius: 50%;
+    color: #30475E;
+    background-color: #CBAF87;
+    font-family: 'Hammersmith One', sans-serif;
+    border: 20px black;
+    padding: 50px;
+}
 
-
-
-
-footer {  padding: 2%;
-    background-color:#30475E;
+footer {
+    padding: 2%;
+    background-color: #30475E;
     top: 250px;
     left: 400px;
     text-align: center;
-    color:#E7DEC8 ;
-    height:6%;
+    color: #E7DEC8;
+    height: 6%;
     font-size: x-large;
 }
-footer img{
+
+footer img {
     height: 100px;
 }
-
-/* nav li a:hover{
-
-
- background-color: rgb(148, 111, 19);
-
-    border-radius: 100%;
-    color: black;
-
-} */
-/* 
-
-a{
-    position:relative;
-    top: 220px;
-    color:black;
-
-    text-decoration: none;
-    text-align: center;
-    padding:50px;
-}
-
-
-h1 {
-    font-family: 'Abril Fatface', cursive;
-    font-size: xx-large;
-    margin-top: 5%;
-    margin-right: 30px;
-    float: left;
-    color: maroon;
-}
- */
 
 main {
     width: 960px;
@@ -133,88 +109,62 @@ section img {
     height: 350px;
 }
 
-/* Text and Button */
+#buyButton :hover {
+    background-color: #CBAF87;
+    color: #30475E;
+}
 
-/* featuesSection */
+#featuesSection {
+    background-image: url("https://www.boma.org/images/heroCrop.jpg");
+}
 
-
-
- #featuesSection{
-    background-image :url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJUl8t6a15BEB21IF61TuO93A_wt4aA3DKg&usqp=CAU");
-
-
-    background-repeat:round
- 
-    /* opacity:0.5; */
- }
-   
-#featuesSection{
-    border: 3px solid;
+#featuesSection {
+    background-image: url("https://www.boma.org/images/heroCrop.jpg");
+    /* background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_908748508_381147.jpg");     */
+    /* background-image: url("https://www.policyex-bd.org/wp-content/uploads/2020/06/1878506.jpg"); */
+    border: 3px solid #30475E;
     height: 400px;
     width: 100%;
-
-    /* float: right; */
     top: 30pt;
-    padding:50px;
+    padding: 50px;
     margin-bottom: 30px;
     text-align: center;
-    /* padding: 20px 30px 10px 10px ; */
-    
-} 
-#featuesSection div p { 
+}
 
+#featuesSection div p {
     height: 20pt;
-/* top: 120pt; */
-
-/* top: 50px; */
-    background-color:#E7DEC8;
-    padding: 10px 10px 10px 10px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-   
-    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #E7DEC8;
 }
-
-
-/* #featuesSection h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-#featuresP ul li {
-    /* position: inherit; */
-    /* font-family: 'Open Sans', sans-serif; */
-    /* height: 250px;
-    color: dimgray; */
-    /* overflow: scroll; */
-    /* font-style: italic; */
-    /* margin-bottom: 10px; */
-/* } */
 
 /* button */
 
 #featuesSection button {
-    border: none;
-    font-size: 18px;
-    color: #fff;
-    background: maroon;
-    padding: 10px 30px;
-    border-radius: 3px;
-    transition: 350ms;
-    cursor: pointer;
+    text-align: center;
+    padding: 10pt;
+    margin: 5pt 0;
+    box-shadow: 0 0 30pt 4pt rgba(0, 0, 0, 0.06);
+    border: 2pt solid E7DEC8;
+    border-radius: 20pt;
+    margin-right: 20pt;
+    height: 40pt;
+    background-color: #30475E;
+    color: #CBAF87;
 }
 
 #featuesSection button:hover {
-    background: salmon;
+    background-color: #CBAF87;
+    color: #30475E;
 }
 
+/* ==================================================================== */
+
+/* CONTROL PAGE */
 
 #selection-bar {
     margin-bottom: 50px;
     width: 200px;
     height: 40px;
-    
-    /* float: left; */
 }
 
 #selection-bar select {
@@ -226,27 +176,21 @@ section img {
     font-size: 20px;
 }
 
-
-/* finished selection bar */
-
 /* table css in control html by odai sadaqa and Suhaib okour */
-#selection-bar select:hover{
+
+#selection-bar select:hover {
     background-color: #CBAF87;
     color: #30475E;
     font-weight: bold;
     transition: 1s;
 }
 
-main div select{
-
-    margin-left:15px;
-    
-    
+main div select {
+    margin-left: 15px;
 }
-/* table:hover{
-    background-color: #FFB740;
-} */
-table {
+
+#controlTable {
+    font-family: Arial, Helvetica, sans-serif;
     border: 1px solid #30475E;
     width: 90%;
     padding-bottom: 20px;
@@ -256,14 +200,15 @@ table {
     background-color: #E7DEC8;
     color: #30475E;
 }
-table button{
-    background-color:#30475E;
+
+table button {
+    background-color: #30475E;
     color: white;
 }
-table button:hover{
+
+table button:hover {
     background-color: #d13a3a;
     transform: scale(1.8);
-
 }
 
 th, td {
@@ -274,8 +219,8 @@ th, td {
     font-weight: bold;
 }
 
-#revertbtn{
-    margin-left:30px;
+#revertbtn {
+    margin-left: 30px;
     margin-bottom: 100px;
     /* padding: 20px; */
     padding-right: 40px;
@@ -287,446 +232,79 @@ th, td {
     transition: 1s;
 }
 
-#revertbtn:hover{
+#revertbtn:hover {
     -moz-border-radius-topleft: 10px;
     -moz-border-radius-topright: 10px;
-    -moz-border-radius-bottomright:0px;
-    -moz-border-radius-bottomleft:0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
     -webkit-border-radius: 10px 10px 0px 0px;
     border-radius: 10px 10px 10px 10px;
     background-color: #CBAF87;
     color: #30475E;
     font-weight: bold;
-
 }
-
-
-    
-    
-    /* background-image: url('https://image.freepik.com/free-photo/paper-palm-leaf-bright-table_23-2148100591.jpg'); */
-
-/* finished table css*/
 
 /* chart css odai sadaqa */
 
-
 #myChart {
-    /* padding:5px; */
+    padding: 5px;
     border: 1px solid #30475E;
-    margin-left:3.5%;
+    margin-left: 3.5%;
     margin-bottom: 10%;
-
 }
-
-/* end chart css */
-
-
-
-#Aboutus #first {
-    float: left;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-#Aboutus #second {
-    float: right;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-#first h2 {
-    font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: italic;
-    font-weight: bold;
-}
-
-#second h2 {
-    font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: italic;
-    font-weight: bold;
-}
-
-#first p {
-    font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    text-align: justify;
-    float: right;
-    padding: 10px;
-}
-
-#second p {
-    font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    text-align: justify;
-    float: right;
-    padding: 10px;
-}
-
-#first a {
-    font-size: 17px;
-    text-align: center;
-    padding: 10px;
-    color: black;
-    font-weight: bold;
-}
-
-#second a {
-    font-size: 17px;
-    text-align: center;
-    padding: 10px;
-    color: black;
-    font-weight: bold;
-}
-
-#div1 {
-    text-align: center;
-    width: 400px;
-    border: 3px solid rgb(80, 79, 79);
-    background-color: rgb(194, 185, 190);
-    height: 250px;
-    float: right;
-    margin: 20px;
-}
-
-#div2 {
-    text-align: center;
-    width: 400px;
-    border: 3px solid rgb(80, 79, 79);
-    background-color: rgb(194, 185, 190);
-    height: 250px;
-    float: left;
-    margin: 20px;
-}
-
-#div3 {
-    text-align: center;
-    width: 400px;
-    border: 3px solid rgb(80, 79, 79);
-    background-color: rgb(194, 185, 190);
-    ;
-    height: 250px;
-    float: right;
-    margin: 20px;
-    /* box-sizing: border-box; */
-}
-
-#div4 {
-    text-align: center;
-    width: 400px;
-    border: 3px solid rgb(80, 79, 79);
-    background-color: rgb(194, 185, 190);
-    ;
-    height: 250px;
-    float: left;
-    margin: 20px;
-}
-
-#div5 {
-    text-align: center;
-    width: 400px;
-    border: 3px solid rgb(80, 79, 79);
-    background-color: rgb(194, 185, 190);
-    ;
-    height: 250px;
-    float: right;
-    margin: 20px;
-}
-
-#div6 {
-    text-align: center;
-    width: 400px;
-    border: 3px solid rgb(80, 79, 79);
-    background-color: rgb(194, 185, 190);
-    ;
-    height: 250px;
-    float: left;
-    margin: 20px;
-}
-
-#Aboutus div img {
-    width: 150px;
-    height: 100px;
-    float: left;
-    border-style: inset;
-    border-width: 3px;
-    border-color: coral;
-    /* padding: 5px; */
-    margin: 20px;
-}
-
-
-
-
-
-
-
-/* .max {
-    border: groove;
-    border-color: sienna;
-    margin-bottom: 50px;
-    position: relative;
-    width: 100%;
-    height: 400px;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 5vw);
-    grid-gap: 5%; */
-
-/* border-style: solid;
-    border-color: darkgoldenrod; */
-
-/* } */
-
-/* 
-#imgsDiv {
-    display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px
-  }
-  
-  .wow{
-    flex: 50%;
-    padding: 0 4px;
-  }
-  
-  .wow img{
-    margin-top: 8px;
-    vertical-align: middle;
-  } */
-
-/* .container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 5vw);
-    grid-gap: 5%;
-    width: 100%;
-    /* border-style: solid;
-    border-color: darkgoldenrod; */
-
-/* margin: 0;
-    padding: 0;
-    text-align: justify; */
-
-/* }
-
-.placeholder {
-    position: absolute;
-    left: 15%;
-    top: 10%;
-}
-
-main div ul {
-    margin: 0;
-    padding: 0;
-    /* position: absolute; */
-
-/* right: 0%;
-    top: 10%; */
-
-/* } */
-
-/* main div ul li {
-    padding: 10%; */
-
-*/
-/* } */
-
-*/
-/* .like {
-    position: absolute;
-    bottom: 0%;
-    left: 35%;
-    margin: 0%;
-    padding: 0%;
-}
-
-.dislike {
-    position: absolute;
-    bottom: 0%;
-    left: 38%;
-    margin: 0%;
-    padding: 0%;
-/* } */
-
-/* .like:hover {
-    transform: scale(1.9);
-    background-color: dodgerblue;
-}
-
-.dislike:hover {
-    transform: scale(1.9);
-    background-color: dodgerblue;
-}
-
-.placeholder:hover {
-    transform: scale(1.2);
-} */
-
-*/
-/* register css by suhaib */
-
-
-
-
-
-
-#data {
-    border: groove;
-    border-color: sienna;
-    margin-bottom: 50px;
-    margin-top: 5%;
-    position: relative;
-    /* float: right; */
-    width: 100%;
-    height: 400px;
-}
-
-#imgZ:hover {
-    transform: scale(1.2);
-}
-
-#imgZ {
-    position: absolute;
-    left: 15%;
-    top: 10%;
-}
-
-.like2 {
-    position: absolute;
-    bottom: 10%;
-    left: 35%;
-    margin: 0%;
-    padding: 0%;
-}
-
-.dislike2 {
-    position: absolute;
-    bottom: 10%;
-    left: 38%;
-    margin: 0%;
-    padding: 0%;
-}
-
-.like2:hover {
-    transform: scale(1.9);
-    background-color: dodgerblue;
-}
-
-.dislike2:hover {
-    transform: scale(1.9);
-    background-color: dodgerblue;
-}
-
-.container2 {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 5vw);
-    grid-gap: 5%;
-    width: 100%;
-}
-
-
-
-
 
 #fff {
-    /* border: groove; */
-    /* border-color: sienna; */
     margin-bottom: 50px;
-
     margin-top: 5%;
-    /* position: relative; */
-    /* float: left; */
-    /* width: 100%;
-    height: 400px; */
     text-align: center;
-    left:250pt;
+    left: 250pt;
 }
+
 #form {
     margin-left: 10pt;
     margin-top: 5pt;
     border: 2px solid #f1f1f1;
-    
+}
 
-} 
 /* style for Form  */
 
-input[type=text],input[type=email],input[type=number],input[type=submit],input[type=reset]
-{
+input[type=text], input[type=email], input[type=number], input[type=submit], input[type=reset] {
     text-align: center;
-    padding:10pt;
+    padding: 10pt;
     margin: 5pt 0;
-    box-shadow:0 0 30pt 4pt rgba(0,0,0,0.06);
-    border:3pt solid #eee;
+    box-shadow: 0 0 30pt 4pt rgba(0, 0, 0, 0.06);
+    border: 3pt solid #eee;
     border-radius: 20pt;
     margin-right: 20pt;
     height: 40pt;
-   
-  
-
-}
-input[type=submit],input[type=reset]
-{
-    background-color:#30475E ;
-    color:#CBAF87;
-
-}
-/* input {
-    width:100%;
-   
-  } */
-input[type=text],input[type=email],input[type=number]:focus {
-    background-color:whitesmoke;
-    
-  }
-
-fieldset {
-    text-align: center;
-    padding: 20px;
-  
 }
 
-/* #emailField {
-    margin-left: 49px;
+input[type=submit], input[type=reset] {
+    background-color: #30475E;
+    color: #CBAF87;
 }
 
-#phoneField {
-    margin-left: 17px;
+input[type=text], input[type=email], input[type=number]:focus {
+    background-color: whitesmoke;
 }
 
 #formButton:hover {
-    background-color: navy;
-}
-
-#formButton {
-    background-color: darkgrey;
-    color: whitesmoke;
-}  */
-#formButton:hover {
-    background-color:#CBAF87 ;
+    background-color: #CBAF87;
     color: #30475E;
 }
-#clear{
+
+#clear {
     text-align: center;
+}
 
+#imgregister {
+    border: 2pt solid #30475E;
 }
-#imgregister{
-    border: 3px solid #131111;
-}
-#imgregister:hover{
+
+#imgregister:hover {
     transform: translateY(-10px);
-    /* transform: scale(1.5s); */
-    /* width: 200pt; */
-
-
 }
+
 #clear ul li {
     border: 3px solid #f1f1f1;
     text-align: center;
@@ -735,48 +313,26 @@ fieldset {
 #ulinput {
     margin: 0;
     padding: 0;
-
-    /* position: absolute; */
     left: 40pt;
-  
-
-
-   
 }
 
- #ulinput li {
+#ulinput li {
     padding: 5pt;
-
-    border: 1px soid #f1f1f1;}
-
-
-
+    border: 1px soid #f1f1f1;
+}
 
 * {
     box-sizing: border-box
 }
 
-
-
-/*Slideshow*/
-
-/* body {
-    font-family: Verdana, sans-serif;
-    margin: 0
-} */
-
 .mySlides {
     display: none
-
 }
-
-
 
 /* Slideshow container */
 
 .slideshow-container {
-    box-shadow: 5px 5px 5px 5px   #999693;
-
+    box-shadow: 5px 5px 5px 5px #999693;
     max-width: 1000px;
     position: relative;
     margin: auto;
@@ -886,12 +442,10 @@ fieldset {
     }
 }
 
-
 /* product page by odai sadaqa */
 
 #grand {
     box-sizing: border-box;
-    /* display: inline; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -900,23 +454,17 @@ fieldset {
 #grand div li {
     box-sizing: border-box;
     border: solid 1px #30475E;
-    /* box-shadow: 200px lightgray; */
     box-shadow: 2px 2px #888888;
-    /* box: shadow 3px lightgray ; */
-    /* border-style: ridge; */
-    /* padding: 20px; */
     margin: 10px;
     width: 225pt;
     height: 400pt;
     position: relative;
-    /* display: inline-block; */
 }
 
 #grand div li img {
     box-sizing: border-box;
     width: 100%;
     height: 50%;
-    /* padding: 20px; */
 }
 
 #grand div li img:hover {
@@ -933,11 +481,8 @@ fieldset {
     cursor: pointer;
     border-radius: 16px;
     padding: 15px;
-    /* display: block;
-    margin:0 auto; */
     color: rgba(198, 206, 165, 0.856);
     background-color: #30475E;
-    ;
     position: absolute;
     bottom: 10px;
     right: 65px;
@@ -962,13 +507,9 @@ fieldset {
     width: 300px;
     padding: 7px;
     color: black;
-    /* display: inline; */
     display: grid;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    /* font-style: italic; */
-    /* text-align: justify; */
-    /* background-color: blue; */
     transition: 1s;
 }
 
@@ -980,111 +521,110 @@ fieldset {
 
 /* End product page by odai Sadaqa */
 
-#card1
-{
+/* ABOUT US */
+
+#card1 {
     background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
     background-size: 350px 230px;
-    width:350px;
-    height:230px;
-    border:1px solid #30475E;
+    width: 350px;
+    height: 230px;
+    border: 1px solid #30475E;
     position: relative;
     bottom: 17pt;
     left: 80pt;
     border-radius: 24px;
-
 }
-#card2
-{
+
+#card2 {
     background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
     background-size: 350px 230px;
-    width:350px;
-    height:230px;
-    border:1px solid;
+    width: 350px;
+    height: 230px;
+    border: 1px solid;
     margin-left: 40%;
     position: relative;
     bottom: 190pt;
     left: 120pt;
     border-radius: 24px;
 }
-#card3
-{
+
+#card3 {
     background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
     background-size: 350px 230px;
-    width:350px;
-    height:230px;
-    border:1px solid;
+    width: 350px;
+    height: 230px;
+    border: 1px solid;
     position: relative;
     bottom: 200px;
     left: 80pt;
     border-radius: 24px;
 }
-#card4
-{
+
+#card4 {
     background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
     background-size: 350px 230px;
-    width:350px;
-    height:230px;
-    border:1px solid;
+    width: 350px;
+    height: 230px;
+    border: 1px solid;
     position: relative;
     margin-left: 40%;
     bottom: 430px;
     left: 120pt;
     border-radius: 24px;
 }
-#card5
-{
+
+#card5 {
     background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
     background-size: 350px 230px;
-    width:350px;
-    height:230px;
-    border:1px solid;
+    width: 350px;
+    height: 230px;
+    border: 1px solid;
     position: relative;
     margin-left: 40%;
     bottom: 290pt;
     left: 120pt;
     border-radius: 24px;
 }
-#card6
-{
+
+#card6 {
     background-image: url('https://wallpaperaccess.com/full/1353541.jpg');
     background-size: 350px 230px;
-    width:350px;
-    height:230px;
-    border:1px solid;
+    width: 350px;
+    height: 230px;
+    border: 1px solid;
     position: relative;
     bottom: 461pt;
     left: 80pt;
     border-radius: 24px;
 }
-#info
-{
+
+#info {
     position: relative;
     left: 20px;
 }
-#name
-{
-    font-weight: bolder; 
+
+#name {
+    font-weight: bolder;
     padding-bottom: 10px;
     padding-top: 10px;
 }
-#email
-{
-    color:#30475E;
+
+#email {
+    color: #30475E;
 }
-#full
-{
+
+#full {
     position: static;
     color: #30475E;
 }
-#profile
-{
-    height:130px; 
-    width:110px;
+
+#profile {
+    height: 130px;
+    width: 110px;
     float: right;
     position: relative;
     right: 20pt;
     bottom: 40pt;
     border-radius: 24px;
-    border:2px solid #30475E;
+    border: 2px solid #30475E;
 }
-
