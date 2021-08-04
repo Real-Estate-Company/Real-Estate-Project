@@ -16,5 +16,6 @@ function PasswordValidate(password) {
     while (password == null || password != "admin") {
         password = prompt("Please Enter Correct Password ?");
     }
+    // swal("Good job!", "welcome to admin control page!", "success");
     alert("welcome to admin control page ..! ");
 }

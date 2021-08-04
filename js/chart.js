@@ -1,6 +1,7 @@
 'use strict';
 
 //Declarations
+
 let boughtArrr = [];
 let namesArrr = [];
 //Product Data
@@ -8,7 +9,10 @@ let data = localStorage.getItem('allProducts');
 let parcedArray = JSON.parse(data);
 // User Data
 let userdata = localStorage.getItem('user');
-let userDataArr = JSON.parse(userdata);
+let userDataArr = [];
+if (userdata !== null) {
+  userDataArr = JSON.parse(userdata);
+}
 // let originalData = parcedArray;//to revert the whole table
 let originalData = Product.all;//to revert the whole table
 console.log(Product.all);
@@ -132,9 +136,6 @@ function selectRedirect(event) {
   if (event.target.value == "User") {
     console.log(event.target.value);
     chooseUser();
-    // let chart = document.getElementById('hideThis');
-    // $('canvaas').remove();
-    // chart.parentNode.removeChild(chart);
     hideChart();
   }
   else if (event.target.value == "Product") {
@@ -181,7 +182,7 @@ function chooseUser() {
   let productth = document.createElement('th');
   tr.appendChild(productth);
   productth.textContent = 'Real-Estate';
-
+  console.log(userDataArr);
   for (let i = 0; i < userDataArr.length; i++) {
     let trElement = document.createElement('tr')
     tableBody.appendChild(trElement);
@@ -207,8 +208,17 @@ function chooseUser() {
     let productIdbuy = userDataArr[i].productid;
     let productname = parcedArray[productIdbuy].name;
     prodactName.textContent = productname;
+    // parcedArray[productIdbuy].bought++;
+    // console.log(parcedArray[productIdbuy].bought);
+
+
+  }
+  if (localStorage.getItem('allProducts') !== null) {
+    localStorage.clear();
   }
 
+  let boughtarray = JSON.stringify(parcedArray);
+  localStorage.setItem('allProducts', boughtarray);
 }
 
 //Revert all Data
@@ -221,44 +231,17 @@ function revertData() {
   productsToArr();
 }
 
-
-let boughtArr = function (productID, productName, boughtNo) {
-  this.productID = productID;
-  this.prodactName = productName;
-  this.boughtNo = 1;
-  boughtArr.all.push(this);
-}
-boughtArr.all = [];
-
-
-function extractBought() {
-
-  for (let i = 0; i < userDataArr.length; i++) {
-    let index = userDataArr[i].productid;
-    let productname = parcedArray[index].name;
-    let boughtItem = new boughtArr(index, productname, boughtArr.boughtNo++);
-
-
-    console.log(boughtItem);
-    console.log(boughtArr.bought);
-  }
-}
-
-// loop parsed 
-
-
-extractBought();
-// console.log(boughtArr.all);
-let buyLabel = boughtArr.all.boughtNo;
-
-
-
-console.log(namesArrr);
 //Chart is not working
 function showChart() {
-  for (let i = 0; i < Product.all.length; i++) {
-    namesArrr.push(Product.all[i].name);
-    boughtArr.push(Product.all[i].bought);
+  let chartdata = localStorage.getItem('allProducts');
+  let parcedArray = [];
+  if (chartdata !== null) {
+    parcedArray = JSON.parse(chartdata);
+  }
+  
+  for (let i = 0; i < parcedArray.length; i++) {
+    namesArrr.push(parcedArray[i].name);
+    boughtArrr.push(parcedArray[i].bought);
   }
   const data = {
     labels: namesArrr,
@@ -312,36 +295,3 @@ function hideChart() {
   //   myChart.remove()
   // );
 }
-
-
-// This comment is for Haneen. Delete it once you finish reading.
-// 
-// I have added a remove method instead of hiding the div (js.324), and it didn't show me the error that says:"I need to destroy the canvas first". Now when I use the new method first, it shows the chart, then it removes the chart once I click hide on the broswer,but when i try to show it again it gives me this message on console : "Failed to create chart: can't acquire context from the given item". So I think it can't show the chart again since we've already destroied it in side the if statement. 
-
-
-// let addChart = document.getElementById('chartList');
-// addChart.addEventListener('change', displayChart);
-// function displayChart(event) {
-//   event.preventDefault();
-
-//   if (event.target.value == "hide") {
-//     let x=document.getElementById('myChart');
-//     x.remove();
-//     // document.getElementById("hideThis").style.visibility = "hidden";
-
-//   }else if (event.target.value == "show"){ 
-//     showChart();        
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
