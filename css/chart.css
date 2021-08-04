@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&display=swap');
+/*Header Font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Open+Sans:wght@600&display=swap');
+/*for the body font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Hammersmith+One&display=swap%27');
+/* HOME PAGE */
+
+body {
+    background-color: #E7DEC8
+}
+
+marquee {
+    height: 20pt;
+    color: #30475E;
+    font-size: x-large;
+    font-family: 'Roboto Slab', serif;
+}
+
+header {
+    padding: 200px;
+    background-color: #30475E;
+    height: 50px;
+    /* margin-bottom: 50px; */
+    text-decoration: none;
+    color: black;
+}
+
+nav img {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 37%;
+    bottom: 59%;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: larger;
+    position: relative;
+    left: 150px;
+    top: 100px;
+    text-align: center;
+    padding: 20px 20px 20px 50px;
+    bottom: revert;
+}
+
+nav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #E7DEC8;
+    font-family: 'Hammersmith One', sans-serif;
+    text-decoration: none;
+    padding: 20px;
+}
+nav ul li a:hover {
+    color: #30475E;
+    background-color: #CBAF87;
+    font-family: 'Hammersmith One', sans-serif;
+    border: 20px black;
+    padding: 20px;
+}
+
+footer {
+    padding: 2%;
+    background-color: #30475E;
+    top: 250px;
+    left: 400px;
+    text-align: center;
+    color: #E7DEC8;
+    height: 6%;
+    font-size: x-large;
+}
+
+footer img {
+    height: 100px;
+}
+
+main {    
+    width: 960px;
+    margin: 0px auto;
+}
+
+main ul {
+    margin: 30px auto;
+    padding: 0px;
+}
+
+#HeaderImg {
+    width: 960px;
+    height: 450px;
+}
+/* CONTROL PAGE */
+
+#selection-bar {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 200px;
+    height: 40px;
+}
+
+#selection-bar select {
+    width: 200px;
+    height: 40px;
+    /* text-align: center; */
+    background-color: #30475E;
+    color: cornsilk;
+    font-size: 20px;
+}
+
+/* table css in control html by odai sadaqa and Suhaib okour */
+
+#selection-bar select:hover {
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+    transition: 1s;
+}
+
+main div select {
+    margin-left: 15px;
+}
+
+#controlTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #30475E;
+    width: 90%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin: 30px;
+    height: 200px;
+    background-color: #7E8A97;
+    color: #30475E;
+}
+
+table button {
+    background-color: #CBAF87;
+    color: white;
+}
+
+table button:hover {
+    background-color: #d13a3a;
+    transform: scale(1.8);
+}
+
+th, td {
+    border: 1px solid #CBAF87;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#revertbtn {
+    margin-left: 30px;
+    margin-bottom: 100px;
+    /* padding: 20px; */
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 20px;
+    background-color: #30475E;
+    color: rgba(198, 206, 165, 0.856);
+    font-family: monospace;
+    transition: 1s;
+}
+
+#revertbtn:hover {
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #CBAF87;
+    color: #30475E;
+    font-weight: bold;
+}
+#myChart {
+    padding: 5px;
+    /* border: 1px solid #30475E; */
+    margin-left: 3.5%;
+    margin-bottom: 10%;
+}
+#controlTable img{
+    height: 40pt;
+    width: 50pt;
+}
