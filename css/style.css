@@ -41,7 +41,7 @@ nav ul li {
     display: inline-block;
     font-size: larger;
     position: relative;
-    left: 150px;
+    left: 12%;
     top: 100px;
     text-align: center;
     padding: 20px 20px 20px 50px;
@@ -78,7 +78,7 @@ footer img {
     height: 100px;
 }
 
-main {    
+main {
     width: 960px;
     margin: 0px auto;
 }
@@ -86,6 +86,35 @@ main {
 main ul {
     margin: 30px auto;
     padding: 0px;
+}
+
+#home-cards ul {    
+    margin: 30px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+#home-cards ul :hover{
+    transform: scale(1.08);
+}    
+
+#home-cards ul li {
+    border: 1px solid #30475E;
+    background-image: linear-gradient(to right, #30475E, hsl(210, 25%, 51%));
+    display: inline-block;
+    margin: 30px, 30px, 30px, 30px;
+    width: 300px;
+    height: 375px;
+    background-color: #30475E;
+    padding: 30pt;
+}
+
+#home-cards ul li p {
+    font-size: 15pt;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    color: #E7DEC8;
+    line-height: 1.6;
 }
 
 #HeaderImg {
@@ -115,13 +144,9 @@ section img {
 }
 
 #featuesSection {
-    background-image: url("https://www.boma.org/images/heroCrop.jpg");
-}
-
-#featuesSection {
-    background-image: url("https://www.boma.org/images/heroCrop.jpg");
-    /* background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_908748508_381147.jpg");     */
-    /* background-image: url("https://www.policyex-bd.org/wp-content/uploads/2020/06/1878506.jpg"); */
+    background-image: url("https://www.forbes.com/advisor/wp-content/uploads/2020/12/real_estate_investing-e1607584315870.jpg");
+    
+    /* background-image: linear-gradient(to right, #30475E, hsl(210, 25%, 51%)); */
     border: 3px solid #30475E;
     height: 400px;
     width: 100%;
@@ -129,12 +154,17 @@ section img {
     padding: 50px;
     margin-bottom: 30px;
     text-align: center;
-}
+    /* opacity: 50%; */
+}   
 
 #featuesSection div p {
     height: 20pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #E7DEC8;
+    color: #30475E;
+    font-weight: bold;
+    background: rgba(245, 245, 245, 0.705);
+    padding: 8pt;
+    
 }
 
 /* button */
@@ -635,7 +665,7 @@ input[type=text], input[type=email], input[type=number]:focus {
     resize: both;
 }
 
-#aboutusP{
+#aboutusP {
     margin-bottom: 50pt;
     display: block;
     color: #30475E;
