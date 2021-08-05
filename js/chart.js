@@ -1,10 +1,7 @@
 'use strict';
 
 //Declarations
-
-let imgArr=Product.all;
-
-
+let imgArr = Product.all;
 
 let boughtArrr = [];
 let namesArrr = [];
@@ -67,7 +64,7 @@ function productTableDraw() {
 
     let trElement = document.createElement('tr')
     tableBody.appendChild(trElement);
-    trElement.textContent = i+1;
+    trElement.textContent = i + 1;
     trElement.style.textAlign = "center";
 
     let firstTd = document.createElement('td');
@@ -76,10 +73,9 @@ function productTableDraw() {
 
     let secondTd = document.createElement('td');
     trElement.appendChild(secondTd);
-    let Pic=document.createElement('img')
+    let Pic = document.createElement('img')
     secondTd.appendChild(Pic);
     Pic.src = imgArr[i].filePath;
-    // secondTd.textContent = parcedArray[i].filePath;
 
     let thirdTd = document.createElement('td');
     trElement.appendChild(thirdTd);
@@ -240,21 +236,15 @@ function revertData() {
 
 //Chart is not working
 function showChart() {
-
-  for (let i = 0; i < Product.all.length; i++) {
-    namesArrr.push(Product.all[i].name);
-    boughtArrr.push(Product.all[i].bought);
-
   let chartdata = localStorage.getItem('allProducts');
   let parcedArray = [];
   if (chartdata !== null) {
     parcedArray = JSON.parse(chartdata);
   }
-  
+
   for (let i = 0; i < parcedArray.length; i++) {
     namesArrr.push(parcedArray[i].name);
     boughtArrr.push(parcedArray[i].bought);
-
   }
   const data = {
     labels: namesArrr,

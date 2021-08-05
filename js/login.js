@@ -1,6 +1,6 @@
 'use strict';
 
-user name prompt
+
 let username = prompt("Please Enter User Name ?");
 userNameValidate(username);
 function userNameValidate(username) {
